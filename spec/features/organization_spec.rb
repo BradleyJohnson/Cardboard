@@ -28,7 +28,7 @@ feature GroupsController do
     expect(page).to have_content("Bay Area Tabletop Guild")
   end
 
-  scenario "Users can join a group if they are logged in" do
+  xscenario "Users can join a group if they are logged in" do
     click_on "log out"
     click_on "Sign up"
     fill_in "Username", with: "JimboSlice"
@@ -49,7 +49,7 @@ feature GroupsController do
     end
   end
 
-  scenario "Users cannot join a group if they are not logged in" do
+  xscenario "Users cannot join a group if they are not logged in" do
     visit groups_path
     click_on "Redwood City Board Games Meetup"
     click_on "Join group"
@@ -57,7 +57,7 @@ feature GroupsController do
     expect(page).to have_content("You must be signed in to join a group")
   end
 
-  scenario "Users can leave a group" do
+  xscenario "Users can leave a group" do
     click_on "log out"
     click_on "Sign up"
     fill_in "Username", with: "JimboSlice"
