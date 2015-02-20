@@ -8,11 +8,19 @@
 </head>
 <body>
   <header>
+    <nav>
+  <ul>
+    <li class="active"><a href="#">Home</a></li>
+    <li><a href="/groups">Groups</a></li>
+    <li><a href="#">Meetups</a></li>
+    <li><a href="#">My Collection</a></li>
     <% if current_user %>
-      Current user: <%= current_user.email %> <br>
-      Current username: <%= current_user.username %> <br>
-      <%= link_to "log out", destroy_user_session_path, method: :delete %>
+    <li><%= link_to "log out", destroy_user_session_path, method: :delete %></li>
+    <li><a href="#"><%= current_user.username %></a></li>
     <% end %>
+
+  </ul>
+</nav>
   </header>
 
     <p class="notice"><%= notice %></p>

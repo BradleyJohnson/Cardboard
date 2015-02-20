@@ -21,7 +21,6 @@ feature Devise::SessionsController do
     click_on "Log in"
 
     expect(page).to have_content("Signed in successfully.")
-    expect(page).to have_content("falcon@spacex.com")
     expect(page).to have_content("Falcon9")
   end
 

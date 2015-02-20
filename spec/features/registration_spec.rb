@@ -22,7 +22,6 @@ feature RegistrationsController do
     click_on "Sign up"
 
     expect(page).to have_content("Falcon9")
-    expect(page).to have_content("falcon@spacex.com")
   end
 
   scenario "Registration error is displayed with bad parameters" do
