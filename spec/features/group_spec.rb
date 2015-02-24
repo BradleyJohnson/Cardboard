@@ -13,23 +13,21 @@ feature GroupsController do
     click_on "Groups"
     click_on "Found a Group"
 
-    fill_in "Group Name", with: "Redwood City Board Games Meetup"
-    fill_in "Zip Code", with: 94062
+    fill_in "Name", with: "Redwood City Board Games Meetup"
     click_on "Create Group"
   end
 
   scenario "Users can create a group" do
     click_on "Found a Group"
 
-    fill_in "Group Name", with: "Bay Area Tabletop Guild"
-    fill_in "Zip Code", with: 94062
+    fill_in "Name", with: "Bay Area Tabletop Guild"
     click_on "Create Group"
 
     expect(page).to have_content("Bay Area Tabletop Guild")
   end
 
-  xscenario "Users can join a group if they are logged in" do
-    click_on "log out"
+  scenario "Users can join a group if they are logged in" do
+    click_on "Log Out"
     click_on "Sign up"
     fill_in "Username", with: "JimboSlice"
     fill_in "Email", with: "polygon@grifter.com"
@@ -58,7 +56,7 @@ feature GroupsController do
   end
 
   xscenario "Users can leave a group" do
-    click_on "log out"
+    click_on "Log Out"
     click_on "Sign up"
     fill_in "Username", with: "JimboSlice"
     fill_in "Email", with: "polygon@grifter.com"
@@ -81,6 +79,15 @@ feature GroupsController do
     within(:css, "ul#my-groups") do
       expect(page).to have_no_content("Redwood City Board Games Meetup")
     end
+  end
+
+  xscenario "Users can only see groups they belong to" do
+    click_on "Found a Group"
+
+    fill_in "Name", with: "Bay Area Tabletop Guild"
+    click_on "Create Group"
+
+    expect(page).to have_content("Bay Area Tabletop Guild")
   end
 
   xscenario "Users can be removed from a group"

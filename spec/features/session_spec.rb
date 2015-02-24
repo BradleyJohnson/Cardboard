@@ -10,7 +10,7 @@ feature Devise::SessionsController do
     fill_in "Password", with: "12345678"
     fill_in "Password confirmation", with: "12345678"
     click_on "Sign up"
-    click_on "log out"
+    click_on "Log Out"
   end
 
   scenario "Previously registered user can log in" do
@@ -21,7 +21,7 @@ feature Devise::SessionsController do
     click_on "Log in"
 
     expect(page).to have_content("Signed in successfully.")
-    expect(page).to have_content("Falcon9")
+    expect(page).to have_content("falcon@spacex.com")
   end
 
   scenario "User cannot log in with unmatched or non-existing credentials" do
