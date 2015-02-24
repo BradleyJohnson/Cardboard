@@ -21,7 +21,7 @@ feature RegistrationsController do
     fill_in "Password confirmation", with: "12345678"
     click_on "Sign up"
 
-    expect(page).to have_content("falcon@spacex.com")
+    expect(page).to have_content("Falcon9")
   end
 
   scenario "Registration error is displayed with bad parameters" do

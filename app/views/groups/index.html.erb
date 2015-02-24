@@ -1,12 +1,12 @@
-<a href="/groups/new" class="btn btn-primary">Found a Group</a>
-<a href="/groups/new" class="btn btn-primary">Join a Group</a>
+
+<!-- <a href="/groups/new" class="btn btn-primary">Join a Group</a> -->
 
 
-<h3>My Groups</h3>
+<h3>All Groups</h3>
 <% if @groups %>
-  <ul>
-    <% @groups.each do |group|%>
-      <li><%= group.name %></li>
+  <dl>
+    <% @groups.each do |group| %>
+        <dt><%= group.name %></dt> - <dd><%= link_to "View Group", group_path(group), class: "btn btn-xs btn-primary" %></dd>
     <% end %>
-  </ul>
+  </dl>
 <% end %>

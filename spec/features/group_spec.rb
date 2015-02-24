@@ -18,6 +18,7 @@ feature GroupsController do
   end
 
   scenario "Users can create a group" do
+    visit root_path
     click_on "Found a Group"
 
     fill_in "Name", with: "Bay Area Tabletop Guild"
@@ -34,8 +35,7 @@ feature GroupsController do
     fill_in "Password", with: "12345678"
     fill_in "Password confirmation", with: "12345678"
     click_on "Sign up"
-    click_on "Groups"
-    click_on "Join a group"
+    click_on "Find a Group"
 
     expect(page).to have_content("Redwood City Board Games Meetup")
 

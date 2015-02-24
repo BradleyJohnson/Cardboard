@@ -1,5 +1,7 @@
 @import url("http://fonts.googleapis.com/css?family=Audiowide");
 
+
+/*SIDEBAR*/
 @media (min-width: 768px) {
   .sidebar-nav .navbar .navbar-collapse {
     padding: 0;
@@ -20,7 +22,21 @@
     padding-bottom: 12px;
   }
 }
+/*SIDEBAR*/
 
+
+/*LOGO HEADER*/
 #board-logo {
   font-family: 'Audiowide', Helvetica, sans-serif;
 }
+/*LOGO HEADER*/
+
+/*DL STRUCTURE*/
+dt:before {
+  content: "";
+  display: block;
+}
+dt, dd {
+  display: inline;
+}
+/*DL STRUCTURE*/

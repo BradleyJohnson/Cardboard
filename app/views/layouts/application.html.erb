@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GameGenie</title>
+  <title>Board Boss</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -31,31 +31,41 @@
                 </li>
                 <li><a href="#"><span class="glyphicon glyphicon-knight" aria-hidden="true"></span> My Collection</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Inbox <span class="badge">1,118</span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Calendar</a></li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Groups <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Groups <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><a href="#">My Groups</a></li>
-                    <li><a href="#">Search For Groups</a></li>
-                    <li><a href="#">Found a Group</a></li>
+                    <li><a href="/groups">Find a Group</a></li>
+                    <li><a href="/groups/new">Found a Group</a></li>
                     <li class="divider"></li>
                     <li class="dropdown-header">Nav header</li>
                     <li><a href="#">Separated link</a></li>
                     <li><a href="#">One more separated link</a></li>
                   </ul>
                 </li>
-                <li><a href="#">Menu Item 4</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Account</a></li>
+                <% if current_user %>
+                  <li>
+                    <%= link_to "<span class=\"glyphicon glyphicon-log-out\" aria-hidden=\"true\"></span> Log Out".html_safe, destroy_user_session_path, method: :delete %>
+                  </li>
+                <% end %>
               </ul>
             </div><!--/.nav-collapse -->
           </div>
         </div>
       </div>
       <div class="col-sm-9 well">
-        Main content goes here
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+        <% if notice || alert %>
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        <% end %>
 
         <%= yield %>
+
+        <% if current_user %>
+          <p class="text-muted">Logged in as: <%= current_user.username %></p>
+        <% end %>
       </div>
     </div>
   </div>
