@@ -9,7 +9,7 @@
 <body>
   <div class="container">
 
-    <h1 id="board-logo">Board Boss</h1>
+    <h1 id="board-logo"><a href="/">Board Boss</a></h1>
 
     <div class="row">
       <div class="col-sm-3">
@@ -35,8 +35,8 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Groups <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">My Groups</a></li>
-                    <li><a href="/groups">Find a Group</a></li>
+                    <li><a href="/groups">My Groups</a></li>
+                    <li><a href="/find-groups">Find a Group</a></li>
                     <li><a href="/groups/new">Found a Group</a></li>
                     <li class="divider"></li>
                     <li class="dropdown-header">Nav header</li>
@@ -55,7 +55,8 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-9 well">
+      <div class="col-sm-9 well"> <!-- main content-->
+        <%#= params %>
         <% if notice || alert %>
           <p class="notice"><%= notice %></p>
           <p class="alert"><%= alert %></p>
