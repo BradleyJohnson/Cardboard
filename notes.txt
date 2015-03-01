@@ -1,0 +1,13 @@
+Private messages:
+
+Have a message model that has sender, receiver, and unread: true (default).
+
+When a user loads their unread messages you set an ajax timeout call that will make all messages
+as read by changing the unread value to false
+
+
+
+Admin:
+
+Add a column to memberships for :isAdmin (set to true or false) which allows the booting of users from groups.
+Could potentially do :isFounder as well for enhanced privileges.

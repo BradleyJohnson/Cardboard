@@ -18,4 +18,12 @@ RSpec.describe Group, :type => :model do
     expect(Group.count).to eq(1)
   end
 
+  it "Founder is automatically added to group set to admin set to admin." do
+    new_user = User.create!(username: "brad", email: "blob@blobby.com", password: "12345678")
+    new_group = new_user.groups.create(name: "The Geeks From BEYOND!")
+    new_group.save
+
+    puts new
+  end
+
 end

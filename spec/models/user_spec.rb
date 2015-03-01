@@ -6,7 +6,7 @@ RSpec.describe User, :type => :model do
     no_name_user = User.new(username: "", email: "blob@blobby.com", password: "12345678")
     no_name_user.save
 
-    expect(User.count).to eq(0)
+    expect(no_name_user.errors.messages).to include({:username => ["can't be blank"]})
   end
 
   it "validations prevent creating User with a duplicate username" do
@@ -15,14 +15,14 @@ RSpec.describe User, :type => :model do
     dup_user1.save
     dup_user2.save
 
-    expect(User.count).to eq(1)
+    expect(dup_user2.errors.messages).to include({:username => ["has already been taken"]})
   end
 
   it "validations prevent creating User without an email" do
     no_email_user = User.new(username: "brad", email: "", password: "12345678")
     no_email_user.save
 
-    expect(User.count).to eq(0)
+    expect(no_email_user.errors.messages).to include({:email => ["can't be blank", "can't be blank"]})
   end
 
   it "validations prevent creating User with a duplicate email" do
@@ -31,7 +31,7 @@ RSpec.describe User, :type => :model do
     dup_user1.save
     dup_user2.save
 
-    expect(User.count).to eq(1)
+    expect(dup_user2.errors.messages).to include({:email => ["has already been taken", "has already been taken"]})
   end
 
 end
