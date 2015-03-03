@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'welcome#home'
 
   resources :groups
+  resources :messages
   get 'memberships' => 'memberships#create'
   get 'find-groups' => 'groups#all'
   # The priority is based upon order of creation: first created -> highest priority.

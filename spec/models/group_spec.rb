@@ -6,7 +6,7 @@ RSpec.describe Group, :type => :model do
     new_group = Group.new(name: "")
     new_group.save
 
-    expect(Group.count).to eq(0)
+    expect(new_group.errors.messages).to include({:name=>["can't be blank"]})
   end
 
   it "validations prevent creating Group with a duplicate name" do
@@ -15,13 +15,13 @@ RSpec.describe Group, :type => :model do
     new_group_1.save
     new_group_2.save
 
-    expect(Group.count).to eq(1)
+    expect(new_group_2.errors.messages).to include({:name=>["has already been taken"]})
   end
 
 
   # This test will have to wait as a unit test until I can shake out how to properly use
   # service objects
-  
+
   # it "Founder is automatically added to group set to admin set to admin." do
   #   new_user = User.create!(username: "brad", email: "blob@blobby.com", password: "12345678")
   #   new_group = new_user.groups.create(name: "The Geeks From BEYOND!")

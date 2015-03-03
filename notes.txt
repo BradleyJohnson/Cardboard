@@ -1,3 +1,11 @@
+WHERE I LEFT OFF:
+  Message form creation works. Message count notification isn't working
+
+
+
+
+
+
 Private messages:
 
 Have a message model that has sender, receiver, and unread: true (default).
@@ -11,3 +19,16 @@ Admin:
 
 Add a column to memberships for :isAdmin (set to true or false) which allows the booting of users from groups.
 Could potentially do :isFounder as well for enhanced privileges.
+
+
+Service Objects
+  Pass in group name into the service object through group_params[:name]. Controller knows nothing about group creation.
+  As in, the service object should create the Group as well. That way it is fully decoupled from the controller.
+  The one other thing the controller has is the typical error handling like what's seen with scaffolds. Something like:
+  founded_group = FoundGroupService.new(group_params[:name], user_id)
+
+  if founded_group
+    redirect_to whatevs
+  else
+    do the error thing here
+  end
