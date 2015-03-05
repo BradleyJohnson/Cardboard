@@ -7,7 +7,7 @@ RSpec.describe Membership, :type => :model do
     new_membership = Membership.new(group_id: 1)
     new_membership.save
 
-    expect(new_membership.errors.messages).to include({:user_id=>["can't be blank", "can't be blank"]})
+    expect(new_membership.errors.messages).to include({:user_id=>["can't be blank"]})
   end
 
   it "Validations prevent creating Membership without a group_id" do
@@ -23,7 +23,7 @@ RSpec.describe Membership, :type => :model do
     new_membership.save
     dup_membership.save
 
-    expect(dup_membership.errors.messages).to include({:group_id => ["has already been taken"]})
+    expect(dup_membership.errors.messages).to include({:group_id => ["You're already a member of this group!"]})
   end
 
   it "Memberships support multiple Users on the same group" do

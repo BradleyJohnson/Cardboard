@@ -20,11 +20,13 @@ class GroupsController < ApplicationController
       is_admin: true,
       is_founder: true
     )
-    redirect_to root_path
+
+    redirect_to groups_path
   end
 
   def show
     @group = Group.find(params[:id])
+    @membership = Membership.find_by(group_id: @group.id, user_id: current_user.id)
   end
 
   private

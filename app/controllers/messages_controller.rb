@@ -2,16 +2,11 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
-    @recipient_username = current_user.username
-    @messages = Message.where(recipient_username: @recipient_username, unread: true)
+    @messages = Message.where(recipient_username: current_user.username, unread: true)
+    UpdateMessagesService.new(@messages).update
   end
 
-  # def new
-  #   @message = Message.new
-  # end
-
   def create
-    puts "IN THE MESSAGES CREATE METHOD"
     @message = Message.new(message_params)
     @message.save
     redirect_to messages_path

@@ -1,25 +1,10 @@
 WHERE I LEFT OFF:
-  Message form creation works. Message count notification isn't working
+  Still working on rounding out the tests for Membership.
+  Still need to create service object mentioned in comments for group_spec
+  Need to build out UI admin so that I can select people to make admin
+    or remove from group, etc etc. Then I can write those tests.
 
-
-
-
-
-
-Private messages:
-
-Have a message model that has sender, receiver, and unread: true (default).
-
-When a user loads their unread messages you set an ajax timeout call that will make all messages
-as read by changing the unread value to false
-
-
-
-Admin:
-
-Add a column to memberships for :isAdmin (set to true or false) which allows the booting of users from groups.
-Could potentially do :isFounder as well for enhanced privileges.
-
+------------------------------------------------------------------------
 
 Service Objects
   Pass in group name into the service object through group_params[:name]. Controller knows nothing about group creation.
@@ -32,3 +17,41 @@ Service Objects
   else
     do the error thing here
   end
+
+  Ideas for Service objects:
+    1. Service for creating an admin
+    2. Service for removing an admin
+    3. Service for removing a member (no idea how to ban someone)
+    4. Service for founding group (already started, first one I tried)
+
+------------------------------------------------------------------------
+
+
+
+
+
+
+BGG API
+  http://www.boardgamegeek.com/xmlapi/boardgame/<game id>  game id example: 12333 (twilight struggle)
+  http://bgg-json.azurewebsites.net/collection/<user name>  game id example: etochort (nice 3rd party json)
+
+
+------------------------------------------------------------------------
+
+Questions for John/Colt
+
+  1. How to store a variable amount of attributes on an active record model. ie I will have a game model and sometime
+  that game model will have a single game mechanic on it, such as "Hand Management". Othertimes, with complex games
+  I will have multiple game mechanics like "Hand Management", "Card Drafting", and "Area Control". Whats the best way
+  to simulate this in a model? Would it be best to create another model for game mechanics and simply use a join
+  table?
+
+  2. Ask about whether or not it's best to scrape the API or just call it. It would be nice to simply call it but
+  their data is pretty weird, comes back in XML and seems to be generally disorganized. One concern, how would I account
+  for people owning copies of the same game.
+
+  3. Admin panel for a group. I can have an AdminController, without having a model associated with it, right?
+  Thinking of having a modal pop up that you can annoint new admins or remove people from the group. How else
+  might I do that?
+
+  4. Try to dig back into how to guarantee unique Memberships. The error messages that

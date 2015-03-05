@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :groups
   resources :messages
   get 'memberships' => 'memberships#create'
+  delete 'memberships' => 'memberships#destroy'
   get 'find-groups' => 'groups#all'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
