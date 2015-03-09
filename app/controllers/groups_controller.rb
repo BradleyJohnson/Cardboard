@@ -1,7 +1,6 @@
 class GroupsController < ApplicationController
   def index
-    @user = User.find(current_user.id)
-    @groups = @user.groups
+    @groups = User.find(current_user.id).groups
   end
 
   def all
@@ -13,21 +12,20 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.create(group_params)
-    @membership = Membership.create(
-      user_id: current_user.id,
-      group_id: @group.id,
-      is_admin: true,
-      is_founder: true
-    )
+    founded_group = FoundGroupService.new(group_params[:name], current_user.id).found
 
-    redirect_to groups_path
+    if founded_group
+      redirect_to groups_path
+    else
+
+    end
   end
 
   def show
     @group = Group.find(params[:id])
     @membership = Membership.find_by(group_id: @group.id, user_id: current_user.id)
   end
+
 
   private
   def group_params

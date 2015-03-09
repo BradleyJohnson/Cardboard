@@ -1,3 +1,4 @@
 <h3><%= @group.name %></h3>
 <%= link_to "Join this group", {:controller => "memberships", :action => "create", :group_id => @group.id }, class: "btn btn-success" %>
 <%= link_to 'Leave Group',  memberships_path({membership: @membership}),  method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+<%= link_to "Admin", admin_path, class: "btn btn-primary" %>

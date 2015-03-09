@@ -4,6 +4,12 @@ WHERE I LEFT OFF:
   Need to build out UI admin so that I can select people to make admin
     or remove from group, etc etc. Then I can write those tests.
 
+
+        #### Create a new page for the admin stuff 300/group/1/admin and create an #authorize_user method on the
+        application controller and also a new AdminController to handle the actions on the admin page. To lock someone
+        out of the page do a before_filter on the Admin controller that calls the authorize_user method and redirect
+        with a notice if the user isn't authorized.
+
 ------------------------------------------------------------------------
 
 Service Objects
@@ -24,9 +30,37 @@ Service Objects
     3. Service for removing a member (no idea how to ban someone)
     4. Service for founding group (already started, first one I tried)
 
+
+
+
+        SERVICE OBJECT TEST EXAMPLES
+
+  expect{ Group.found(@whatevs, more whatevs) }.to change(Group, :count).by(1)
+  expect{ Group.found(@whatevs, more whatevs) }.to change(Group, :count).from(0).to(1)
+
+        SEPARATE
+
+
+  before do
+  @memeber = a new member
+  end
+
+
+  it 'creates a new group' do
+  founder_service = FoundGroup.new (@member, 'group name')
+
+  expect{ founder_service.found_group }.to change(Group, :count).from(0).to(1)
+  end
+
+
+  it 'returns a  new group' do
+  founder_service = FoundGroup.new (@member, 'group name')
+  group = found_service.found_group
+
+  expect(group.name).to eq('group_name')
+  end
+
 ------------------------------------------------------------------------
-
-
 
 
 
@@ -54,4 +88,9 @@ Questions for John/Colt
   Thinking of having a modal pop up that you can annoint new admins or remove people from the group. How else
   might I do that?
 
-  4. Try to dig back into how to guarantee unique Memberships. The error messages that
+  4. How to really implement authorization. Is it possible without using CanCan or Pundit? It's easy to just
+  conditionally render a button. But that's no good. Here's an idea (using the admin role and memberships controller
+  as an example). How about I create an extra controller action on Memberships called #create_admin which will utilize
+  a service object to update the membership. Now the Auth part. I will create a before_action: method similar to
+  the authenticate_user! from Devise. So, before that controller action is accessed the user must be verified as
+  an Admin of that group.
