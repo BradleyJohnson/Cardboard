@@ -2,19 +2,14 @@ require 'rails_helper'
 
 feature MembershipsController do
   before :each do
-    visit root_path
-    click_on "Sign up"
-    fill_in "Username", with: "TreeFiddy"
-    fill_in "Email", with: "you@got.com"
-    fill_in "Password", with: "12345678"
-    fill_in "Password confirmation", with: "12345678"
-    click_on "Sign up"
+    bob = User.create(username: "bob", email: "bob@bob.com", password: "12345678")
+    ted = User.create(username: "ted", email: "ted@ted.com", password: "12345678")
+    new_group = Group.create(name: "Redwood City Board Games Meetup")
+    Membership.create(user_id: bob.id, group_id: new_group.id, is_admin: true, is_founder: true)
+    log_in(bob, "12345678")
 
     click_on "Groups"
-    click_on "Found a Group"
-
-    fill_in "Name", with: "Redwood City Board Games Meetup"
-    click_on "Create Group"
+    click_on "My Groups"
   end
 
   scenario "Users should be added to group autmatically after founding group." do
@@ -23,13 +18,9 @@ feature MembershipsController do
   end
 
   scenario "Users can join a group if they are logged in" do
-    click_on "Log Out"
-    click_on "Sign up"
-    fill_in "Username", with: "JimboSlice"
-    fill_in "Email", with: "polygon@grifter.com"
-    fill_in "Password", with: "12345678"
-    fill_in "Password confirmation", with: "12345678"
-    click_on "Sign up"
+    ted = User.find_by(username: "ted")
+    log_out
+    log_in(ted, "12345678")
     click_on "Find a Group"
 
     expect(page).to have_content("Redwood City Board Games Meetup")
@@ -50,16 +41,5 @@ feature MembershipsController do
     expect(page).to have_content("Your Groups")
     expect(page).to have_no_content("Redwood City Board Games Meetup")
   end
-
-  xscenario "Founder can remove non-admin user from a Group"
-  xscenario "Admin can remove non-admin user from a Group"
-  xscenario "Founder can remove other Admin from a Group"
-  xscenario "Admin cannot remove other Admin from a Group"
-  xscenario "Admin cannot remove Founder from a Group"
-  xscenario "Admin can add Admin status to a User"
-  xscenario "Admin can remove Admin status to a User"
-  xscenario "Normal User cannot create an Admin"
-  xscenario "Normal User cannot remove an Admin"
-
 
 end

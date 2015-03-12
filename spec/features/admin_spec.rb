@@ -30,4 +30,14 @@ feature "Admin page" do
     expect(page).to have_content("You are not authorized to view this page.")
   end
 
+  xscenario "Founder can remove non-admin user from a Group"
+  xscenario "Admin can remove non-admin user from a Group"
+  xscenario "Founder can remove other Admin from a Group"
+  xscenario "Admin cannot remove other Admin from a Group"
+  xscenario "Admin cannot remove Founder from a Group"
+  xscenario "Admin can add Admin status to a User"
+  xscenario "Admin can remove Admin status to a User"
+  xscenario "Normal User cannot create an Admin"
+  xscenario "Normal User cannot remove an Admin"
+
 end
