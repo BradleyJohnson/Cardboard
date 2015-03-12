@@ -1,11 +1,10 @@
 WHERE I LEFT OFF:
   Still working on rounding out the tests for Membership.
-  Still need to create service object mentioned in comments for group_spec
   Need to build out UI admin so that I can select people to make admin
     or remove from group, etc etc. Then I can write those tests.
 
 
-        #### Create a new page for the admin stuff 300/group/1/admin and create an #authorize_user method on the
+        #### Create a new page for the admin stuff 3000/group/1/admin and create an #authorize_user method on the
         application controller and also a new AdminController to handle the actions on the admin page. To lock someone
         out of the page do a before_filter on the Admin controller that calls the authorize_user method and redirect
         with a notice if the user isn't authorized.
@@ -79,6 +78,9 @@ Questions for John/Colt
   I will have multiple game mechanics like "Hand Management", "Card Drafting", and "Area Control". Whats the best way
   to simulate this in a model? Would it be best to create another model for game mechanics and simply use a join
   table?
+        ##### Create a new model Mechanic. It will have one property eg "Card Drafting" or "Dice Rolling". Then
+              then establish a one to many relationship with a game model. One game has many mechanics. A mechanic
+              belongs to a game.
 
   2. Ask about whether or not it's best to scrape the API or just call it. It would be nice to simply call it but
   their data is pretty weird, comes back in XML and seems to be generally disorganized. One concern, how would I account
@@ -94,3 +96,5 @@ Questions for John/Colt
   a service object to update the membership. Now the Auth part. I will create a before_action: method similar to
   the authenticate_user! from Devise. So, before that controller action is accessed the user must be verified as
   an Admin of that group.
+
+  5. Test helpers? Factory Girl? Really sick of long winded test setup.

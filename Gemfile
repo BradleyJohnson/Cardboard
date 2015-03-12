@@ -29,6 +29,8 @@ gem 'spring', '~> 1.3.1',        group: :development
 
 
 group :development, :test do
+  gem 'pry-rails'
+  gem 'pry'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'

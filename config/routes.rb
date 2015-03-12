@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'welcome#home'
 
   resources :groups
-  get 'groups/:id/admin' => 'groups#admin', as: :admin
+  get 'groups/:id/admin' => 'admin#show', as: :admin
   resources :messages
   get 'memberships' => 'memberships#create'
   delete 'memberships' => 'memberships#destroy'
