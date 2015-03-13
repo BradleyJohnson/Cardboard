@@ -1,2 +1,12 @@
 <h1>Admin Page for <%= @group.name %></h1>
 <h5>Founder: <%= @founder %></h5>
+<%= form_tag("/user-search", method: "get", id: "search-form") do %>
+  <%= hidden_field_tag(:group_id, @group.id) %>
+  <%= text_field_tag(:admin_user_search) %>
+  <%= submit_tag "Search", id: "admin-search-submit" %>
+<% end %>
+
+
+<ul id="list">
+
+</ul>

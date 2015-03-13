@@ -11,53 +11,7 @@ WHERE I LEFT OFF:
 
 ------------------------------------------------------------------------
 
-Service Objects
-  Pass in group name into the service object through group_params[:name]. Controller knows nothing about group creation.
-  As in, the service object should create the Group as well. That way it is fully decoupled from the controller.
-  The one other thing the controller has is the typical error handling like what's seen with scaffolds. Something like:
-  founded_group = FoundGroupService.new(group_params[:name], user_id)
 
-  if founded_group
-    redirect_to whatevs
-  else
-    do the error thing here
-  end
-
-  Ideas for Service objects:
-    1. Service for creating an admin
-    2. Service for removing an admin
-    3. Service for removing a member (no idea how to ban someone)
-    4. Service for founding group (already started, first one I tried)
-
-
-
-
-        SERVICE OBJECT TEST EXAMPLES
-
-  expect{ Group.found(@whatevs, more whatevs) }.to change(Group, :count).by(1)
-  expect{ Group.found(@whatevs, more whatevs) }.to change(Group, :count).from(0).to(1)
-
-        SEPARATE
-
-
-  before do
-  @memeber = a new member
-  end
-
-
-  it 'creates a new group' do
-  founder_service = FoundGroup.new (@member, 'group name')
-
-  expect{ founder_service.found_group }.to change(Group, :count).from(0).to(1)
-  end
-
-
-  it 'returns a  new group' do
-  founder_service = FoundGroup.new (@member, 'group name')
-  group = found_service.found_group
-
-  expect(group.name).to eq('group_name')
-  end
 
 ------------------------------------------------------------------------
 
@@ -86,6 +40,14 @@ Questions for John/Colt
   their data is pretty weird, comes back in XML and seems to be generally disorganized. One concern, how would I account
   for people owning copies of the same game.
 
+
+
+
+
+
+------------------------------------------------------------------------
+Archive
+
   3. Admin panel for a group. I can have an AdminController, without having a model associated with it, right?
   Thinking of having a modal pop up that you can annoint new admins or remove people from the group. How else
   might I do that?
@@ -98,3 +60,53 @@ Questions for John/Colt
   an Admin of that group.
 
   5. Test helpers? Factory Girl? Really sick of long winded test setup.
+
+
+
+  Service Objects
+    Pass in group name into the service object through group_params[:name]. Controller knows nothing about group creation.
+    As in, the service object should create the Group as well. That way it is fully decoupled from the controller.
+    The one other thing the controller has is the typical error handling like what's seen with scaffolds. Something like:
+    founded_group = FoundGroupService.new(group_params[:name], user_id)
+
+    if founded_group
+      redirect_to whatevs
+    else
+      do the error thing here
+    end
+
+    Ideas for Service objects:
+      1. Service for creating an admin
+      2. Service for removing an admin
+      3. Service for removing a member (no idea how to ban someone)
+      4. Service for founding group (already started, first one I tried)
+
+
+
+
+          SERVICE OBJECT TEST EXAMPLES
+
+    expect{ Group.found(@whatevs, more whatevs) }.to change(Group, :count).by(1)
+    expect{ Group.found(@whatevs, more whatevs) }.to change(Group, :count).from(0).to(1)
+
+          SEPARATE
+
+
+    before do
+    @memeber = a new member
+    end
+
+
+    it 'creates a new group' do
+    founder_service = FoundGroup.new (@member, 'group name')
+
+    expect{ founder_service.found_group }.to change(Group, :count).from(0).to(1)
+    end
+
+
+    it 'returns a  new group' do
+    founder_service = FoundGroup.new (@member, 'group name')
+    group = found_service.found_group
+
+    expect(group.name).to eq('group_name')
+    end

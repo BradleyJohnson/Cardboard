@@ -29,6 +29,8 @@ gem 'spring', '~> 1.3.1',        group: :development
 
 
 group :development, :test do
+  gem 'better_errors'
+  gem 'faker'
   gem 'jasmine-rails'
   gem 'pry-rails'
   gem 'pry'
