@@ -40,7 +40,11 @@ Questions for John/Colt
   their data is pretty weird, comes back in XML and seems to be generally disorganized. One concern, how would I account
   for people owning copies of the same game.
 
+  3. How to perform authorization through an ajax call. For example in those handlers for making someone an admin or
+  booting them from group. Do I send the session with the request? Then handle the authorization at the controller? They
+  are authorized once when they hit the admin page. Is that enough?
 
+  4. Ask how to inherit rails helpers like redirect_to and path helpers for my service objects.
 
 
 

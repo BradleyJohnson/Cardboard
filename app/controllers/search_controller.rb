@@ -1,8 +1,6 @@
 class SearchController < ApplicationController
   def users
-    q = params[:userQuery]
-    group_id = params[:group]
-    @users = User.where("username ILIKE ?", "%#{q}%")
+    @users = AdminUserSearchService.new(params[:group], params[:userQuery]).call
     render json: @users
   end
 end

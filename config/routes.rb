@@ -4,14 +4,18 @@ Rails.application.routes.draw do
 
   root 'welcome#home'
 
-  resources :groups
-  get 'groups/:id/admin' => 'admin#show', as: :admin
   resources :messages
-  get 'memberships' => 'memberships#create'
-  delete 'memberships' => 'memberships#destroy'
+
+  resources :groups
   get 'find-groups' => 'groups#all'
 
+  get 'groups/:id/admin' => 'admin#show', as: :admin
+
   get 'user-search' => 'search#users'
+
+  get 'memberships' => 'memberships#create'
+  delete 'memberships' => 'memberships#destroy'
+  put 'memberships' => 'memberships#update'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

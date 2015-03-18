@@ -7,12 +7,12 @@ def show
 end
 
 
-  private
-    def authorize_admin
-      authorized = AuthorizeAdminService.new(params[:id], current_user.id).call
-      if !authorized
-        redirect_to groups_path, notice: "You are not authorized to view this page."
-      end
+private
+  def authorize_admin
+    authorized = AuthorizeAdminService.new(params[:id], current_user.id).call
+    if !authorized
+      redirect_to groups_path, notice: "You are not authorized to view this page."
     end
+  end
 
 end

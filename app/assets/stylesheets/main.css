@@ -47,3 +47,19 @@ dt, dd {
 /*.panel {
   padding: 20px 40px;
 }*/
+
+/*ADMIN SEARCH*/
+
+#search-form {
+  margin-bottom: 10px;
+}
+
+
+/*GENERAL*/
+span {
+  margin: 0px 2.5px;
+}
+
+.sidebar-nav span {
+  margin: 0px 5px;
+}
