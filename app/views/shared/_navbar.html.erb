@@ -20,7 +20,7 @@
               <li class="active">
                 <a href="#"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>Dashboard</a>
               </li>
-              <li><a href="#"><span class="glyphicon glyphicon-knight" aria-hidden="true"></span>My Collection</a></li>
+              <li><a href="/collection"><span class="glyphicon glyphicon-knight" aria-hidden="true"></span>My Collection</a></li>
               <li><a href="/messages"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Inbox<span class="badge"><%= @message_count %></span></a></li>
               <li><a href="#"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>Calendar</a></li>
               <li class="dropdown">
@@ -53,7 +53,7 @@
       <% end %>
 
       <%= yield %>
-      
+
     </div>
     <% if current_user %>
       <div class="row">

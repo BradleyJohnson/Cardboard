@@ -11,15 +11,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150303042942) do
+ActiveRecord::Schema.define(version: 20150319182730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "collections", force: true do |t|
+    t.integer  "game_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "collections", ["game_id"], name: "index_collections_on_game_id", using: :btree
+  add_index "collections", ["user_id"], name: "index_collections_on_user_id", using: :btree
+
+  create_table "games", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "thumbnail"
+    t.integer  "year_published"
+    t.string   "game_designer"
+    t.integer  "min_players"
+    t.integer  "max_players"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "groups", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "mechanics", force: true do |t|
+    t.string   "mechanic_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "game_id"
   end
 
   create_table "memberships", force: true do |t|

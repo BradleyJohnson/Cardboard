@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   has_many :memberships
   has_many :groups, through: :memberships
 
+  has_many :collections
+  has_many :games, through: :collections
+
 
 
   # Include default devise modules. Others available are:

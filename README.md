@@ -1,3 +1,9 @@
+[![Code Climate](https://codeclimate.com/github/BradleyJohnson/BoardHero/badges/gpa.svg)](https://codeclimate.com/github/BradleyJohnson/BoardHero)
+
+
+[![Test Coverage](https://codeclimate.com/github/BradleyJohnson/BoardHero/badges/coverage.svg)](https://codeclimate.com/github/BradleyJohnson/BoardHero)
+
+https://codeclimate.com/github/BradleyJohnson/BoardHero
 == README
 
 This README would normally document whatever steps are necessary to get the
