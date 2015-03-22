@@ -1,1 +1,14 @@
-<button name="button" class="btn btn-primary">Import your collection from BGG</button>
+<input type="text" id="bgg-username" placeholder="BGG username here">
+<p>
+  then click the button to import your collection
+</p>
+<button name="button" class="btn btn-primary" id="import-collection">Import!</button>
+
+<% @collections.each do |game| %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <img src="<%= "http:" + game.thumbnail %>" alt="" />
+      text
+    </div>
+  </div>
+<% end %>

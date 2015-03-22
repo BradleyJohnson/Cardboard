@@ -19,8 +19,8 @@ Rails.application.routes.draw do
 
   get 'collection' => 'collections#index'
 
-
-
+  get 'bgg'  => 'collections#import'
+  put 'bgg'  => 'collections#create'
 
 
 

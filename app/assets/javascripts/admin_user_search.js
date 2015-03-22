@@ -18,10 +18,10 @@ $(document).ready(function() {
         <span class="glyphicon glyphicon-remove pull-right" aria-hidden="true" id="remove-user"></span>\
         <span class="glyphicon glyphicon-ban-circle pull-right" aria-hidden="true" id="ban-user"></span>\
         <span class="glyphicon glyphicon-thumbs-up pull-right" aria-hidden="true" id="make-admin"></span></li>'
-        $(".list-group").append(html)
+        $(".list-group").append(html);
       }
-      })
     });
+  });
 
 
   // Click handler for kick from group
@@ -36,9 +36,9 @@ $(document).ready(function() {
         user_id: userId,
         group_id: groupId
       }
-    })
+    });
 
-  })
+  });
 
   // Click handler for make admin
   $(".list-group").on("click", "#make-admin", function() {
@@ -63,17 +63,8 @@ $(document).ready(function() {
         .text(errorMessage);
 
       $('#primary-content').prepend(errorNode);
-    })
-
-  })
-
-
-
-  // Click handler for ban from group
-  // $(".list-group").on("click", "#ban-user", function() {
-  //   console.log("CLICKED BANHAMMER");
-  // })
-
+    });
+  });
 
 
 
