@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get 'bgg'  => 'collections#import'
   put 'bgg'  => 'collections#create'
 
-
+  get 'account' => 'account#index'
 
 
 

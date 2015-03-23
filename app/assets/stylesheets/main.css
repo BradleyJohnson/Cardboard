@@ -1,4 +1,4 @@
-@import url("http://fonts.googleapis.com/css?family=Audiowide");
+
 
 
 /*SIDEBAR*/
@@ -25,12 +25,6 @@
 /*SIDEBAR*/
 
 
-/*LOGO HEADER*/
-#board-logo {
-  font-family: 'Audiowide', Helvetica, sans-serif;
-}
-/*LOGO HEADER*/
-
 /*DL STRUCTURE*/
 dt:before {
   content: "";
@@ -40,13 +34,6 @@ dt, dd {
   display: inline;
 }
 /*DL STRUCTURE*/
-
-
-/*PANELS FOR PRIVATE MESSAGES*/
-
-/*.panel {
-  padding: 20px 40px;
-}*/
 
 /*ADMIN SEARCH*/
 

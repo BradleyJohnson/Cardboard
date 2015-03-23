@@ -1,5 +1,4 @@
 <div class="container">
-
   <h1 id="board-logo"><a href="/">Board Boss</a></h1>
 
   <div class="row">
@@ -16,14 +15,13 @@
             <span class="visible-xs navbar-brand">Sidebar menu</span>
           </div>
           <div class="navbar-collapse collapse sidebar-navbar-collapse">
+
             <ul class="nav navbar-nav">
-              <li class="active">
-                <a href="#"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>Dashboard</a>
-              </li>
-              <li><a href="/collection"><span class="glyphicon glyphicon-knight" aria-hidden="true"></span>My Collection</a></li>
-              <li><a href="/messages"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Inbox<span class="badge"><%= @message_count %></span></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>Dashboard</a></li>
+              <li class="<%= collection_active %>"><a href="/collection"><span class="glyphicon glyphicon-knight" aria-hidden="true"></span>My Collection</a></li>
+              <li class="<%= inbox_active %>"><a href="/messages"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Inbox<span class="badge<%= has_unread? %>"><%= @message_count %></span></a></li>
               <li><a href="#"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>Calendar</a></li>
-              <li class="dropdown">
+              <li class="dropdown <%= group_active %>">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>Groups<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="/groups">My Groups</a></li>
@@ -35,12 +33,14 @@
                   <li><a href="#">One more separated link</a></li>
                 </ul>
               </li>
-              <li><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Account</a></li>
+              <li class="<%= account_active %>"><a href="/account"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Account</a></li>
+
               <% if current_user %>
                 <li>
                   <%= link_to "<span class=\"glyphicon glyphicon-log-out\" aria-hidden=\"true\"></span>Log Out".html_safe, destroy_user_session_path, method: :delete %>
                 </li>
               <% end %>
+
             </ul>
           </div><!--/.nav-collapse -->
         </div>
