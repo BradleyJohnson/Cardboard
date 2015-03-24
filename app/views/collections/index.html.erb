@@ -1,14 +1,13 @@
-<h1>Your War Chest</h1>
+<h1>War Chest</h1>
 
 <p>
   Nothing here? Head to your Account Page to import your collection from BGG!
 </p>
 
-<% @collections.each do |game| %>
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <img src="<%= "http:" + game.thumbnail %>" alt="" />
-      text
+<div id="masonry-div">
+  <% @collections.each do |game| %>
+    <div class="item">
+        <img src="<%= medium_img_url(game.thumbnail) %>" alt="Picture of game box" />
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

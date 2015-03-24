@@ -23,13 +23,38 @@ h1 {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #EC583A;
-  background-color: #C7D0D5;
+  /*color: #EC583A;*/
+  /*background-color: #C7D0D5;*/
+  color: #F5F5F5;
+  background-color: #778288;
 }
+
+.navbar {
+  background: #DDD;
+}
+
+/*.navbar-default .navbar-nav > li > a {
+  color: #F5F5F5;
+}*/
 
 li .has-unread {
   background-color: #EC583A;
 }
+
+.item {
+  margin: 5px;
+}
+
+img {
+  padding: 1px;
+  background: #778288;
+  border-radius: 3px;
+}
+
+#primary-content {
+  background: #DDD;
+}
+
 
 /*COLORS
 #555 default text
