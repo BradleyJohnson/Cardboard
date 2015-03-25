@@ -18,8 +18,10 @@ module ApplicationHelper
   end
 
   def has_unread?
-    if Message.where(recipient_username: current_user.username, unread: true ).count > 0
-      " has-unread"
+    if current_user
+      if Message.where(recipient_username: current_user.username, unread: true ).count > 0
+        " has-unread"
+      end
     end
   end
 
