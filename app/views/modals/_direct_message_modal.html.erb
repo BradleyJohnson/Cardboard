@@ -8,9 +8,6 @@
       <div class="modal-body">
         <%= form_for @message, html: {class: "form-horizontal"} do |f| %>
 
-          <%#= render partial: "shared/errors", locals: {error_var: @project} %>
-
-
             <%= f.hidden_field :sender_username, value: current_user.username %>
           <div class="form-group">
             <%= f.label "Addressee", class: "col-sm-1" %>

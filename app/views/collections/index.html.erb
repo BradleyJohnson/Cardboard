@@ -1,13 +1,21 @@
-<h1>War Chest</h1>
-
-<p>
-  Nothing here? Head to your Account Page to import your collection from BGG!
-</p>
+<% if !@collections %>
+  <p>Nothing here? Head to your <a href="/account">Account</a> Page to import your collection from BGG!</p>
+<% end %>
 
 <div id="masonry-div">
   <% @collections.each do |game| %>
-    <div class="item">
-        <img src="<%= medium_img_url(game.thumbnail) %>" alt="Picture of game box" />
+    <div class="item"
+      data-game-name="<%= game.name %>"
+      data-game-description="<%= game.description %>"
+      data-year-published="<%= game.year_published %>"
+      data-min-players="<%= game.min_players %>"
+      data-max-players="<%= game.max_players %>"
+      data-game-designer="<%= game.game_designer %>"
+      data-bgg-id="<%= game.bgg_id %>"
+      >
+        <img src="<%= medium_img_url(game.thumbnail) %>" alt="Picture of <%= game.name %> game box." />
     </div>
   <% end %>
 </div>
+
+<%= render partial: "modals/game_info_modal" %>

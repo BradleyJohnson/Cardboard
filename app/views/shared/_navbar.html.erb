@@ -1,5 +1,14 @@
 <div class="container">
-  <h1 id="board-logo"><a href="/">Board Boss</a></h1>
+
+  <div class="row">
+      <div class="col-sm-3">
+        <h1 id="board-logo"><a href="/">Board Boss</a></h1>
+      </div>
+      <div class="">
+        <h1 id="nav-header"><%= returns_current_page_header %></h1>
+      </div>
+
+  </div>
 
   <div class="row">
     <div class="col-sm-3">
@@ -46,6 +55,7 @@
         </div>
       </div>
     </div>
+
     <div class="col-sm-9 well" id="primary-content"> <!-- main content-->
       <% if notice || alert %>
         <p class="notice"><%= notice %></p>

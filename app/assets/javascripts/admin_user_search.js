@@ -14,7 +14,7 @@ $(document).ready(function() {
       }
     }).done(function(data) {
       for (var i = 0; i < data.length; i++) {
-        html = '<li class="list-group-item" data-user-id="' + data[i].id + '">'+data[i].username+'\
+        html = '<li class="list-group-item" data-user-id="' + data[i].id + '">' + data[i].username+'\
         <span class="glyphicon glyphicon-remove pull-right" aria-hidden="true" id="remove-user"></span>\
         <span class="glyphicon glyphicon-ban-circle pull-right" aria-hidden="true" id="ban-user"></span>\
         <span class="glyphicon glyphicon-thumbs-up pull-right" aria-hidden="true" id="make-admin"></span></li>'
