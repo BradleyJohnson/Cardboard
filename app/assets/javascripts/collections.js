@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
   $("#masonry-div").on("click", "img", function() {
     var modalTitle = $(".modal-header h4");
     var modalBody = $(".modal-body")
@@ -29,4 +30,25 @@ $(document).ready(function() {
 
     $('#gameInfoModal').modal();
   });
+
+  // Simple jQuery search filter
+  $("#game-filter-text").on("keyup", function() {
+    var filterString = $("#game-filter-text").val();
+    var allItems = $("div.item");
+    var filteredItems = $("div.item").not("[data-game-name*='" + filterString.toLowerCase() + "']");
+
+    if (filterString == "") {
+      allItems.show();
+      return;
+    }
+    allItems.show();
+    filteredItems.hide();
+
+    var $container = $('#masonry-div').imagesLoaded( function() {
+    // initialize Packery after all images have loaded
+      $container.packery();
+    });
+
+  });
+
 });
