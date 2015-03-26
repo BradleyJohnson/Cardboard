@@ -31,24 +31,43 @@ $(document).ready(function() {
     $('#gameInfoModal').modal();
   });
 
-  // Simple jQuery search filter
-  $("#game-filter-text").on("keyup", function() {
-    var filterString = $("#game-filter-text").val();
-    var allItems = $("div.item");
-    var filteredItems = $("div.item").not("[data-game-name*='" + filterString.toLowerCase() + "']");
 
-    if (filterString == "") {
-      allItems.show();
-      return;
-    }
-    allItems.show();
-    filteredItems.hide();
+  // quick search regex
+  $( function() {
+    var qsRegex;
 
+    // init Isotope
     var $container = $('#masonry-div').imagesLoaded( function() {
-    // initialize Packery after all images have loaded
-      $container.packery();
+      $container.isotope({
+        layoutMode: 'packery',
+        itemSelector: '.item',
+        filter: function() {
+          return qsRegex ? $(this).attr("data-game-name").match( qsRegex ) : true;
+        }
+      });
     });
 
+    // use value of search field to filter
+    var $quicksearch = $('#quicksearch').keyup( debounce( function() {
+      qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+      $container.isotope();
+    }, 200 ) );
+
   });
+
+  // debounce so filtering doesn't happen every millisecond
+  function debounce( fn, threshold ) {
+    var timeout;
+    return function debounced() {
+      if ( timeout ) {
+        clearTimeout( timeout );
+      }
+      function delayed() {
+        fn();
+        timeout = null;
+      }
+      timeout = setTimeout( delayed, threshold || 100 );
+    }
+  }
 
 });
