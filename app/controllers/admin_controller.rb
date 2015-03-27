@@ -3,7 +3,8 @@ before_action :authorize_admin, only: [:show]
 
 def show
   @group = Group.find(params[:id])
-  @founder = GetFounderService.new(@group.id).call
+  @founder = @group.founder
+  @administrators = @group.admin
 end
 
 

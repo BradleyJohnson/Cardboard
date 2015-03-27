@@ -1,0 +1,25 @@
+<div class="modal fade" id="userSearchModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">&times;</button>
+        <h4></h4>
+      </div>
+      <div class="modal-body">
+
+        <div id="search-form-div">
+          <%= form_tag("/user-search", method: "get", id: "search-form") do %>
+            <%= hidden_field_tag(:group_id, @group.id) %>
+            <%= text_field_tag(:admin_user_search) %>
+            <%= submit_tag "Search", id: "admin-search-submit" %>
+          <% end %>
+        </div>
+
+        <ul class="list-group col-md-6">
+
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>

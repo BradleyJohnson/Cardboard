@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150319234635) do
+ActiveRecord::Schema.define(version: 20150327170210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 20150319234635) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description"
+    t.string   "location"
   end
 
   create_table "mechanics", force: true do |t|
@@ -50,6 +52,19 @@ ActiveRecord::Schema.define(version: 20150319234635) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "game_id"
+  end
+
+  create_table "meetups", force: true do |t|
+    t.string   "location_string"
+    t.string   "location_address"
+    t.text     "meetup_notes"
+    t.integer  "rsvp_count"
+    t.date     "meetup_date"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "group_id"
   end
 
   create_table "memberships", force: true do |t|
@@ -92,5 +107,15 @@ ActiveRecord::Schema.define(version: 20150319234635) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "users_meetups", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "meetup_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users_meetups", ["meetup_id"], name: "index_users_meetups_on_meetup_id", using: :btree
+  add_index "users_meetups", ["user_id"], name: "index_users_meetups_on_user_id", using: :btree
 
 end

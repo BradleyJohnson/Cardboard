@@ -1,5 +1,11 @@
 <%= form_for @group do |f| %>
-<%= f.label :name %>
+<%= f.label "Group Name" %>
 <%= f.text_field :name %>
+
+<%= f.label "Where are you located?" %>
+<%= f.text_field :location %>
+
+<%= f.label "Group Description" %>
+<%= f.text_field :description %>
 <%= f.submit %>
 <% end %>

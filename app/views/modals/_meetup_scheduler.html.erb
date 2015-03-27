@@ -1,0 +1,21 @@
+<div class="modal fade" id="meetupSchedulerModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">&times;</button>
+        <h4></h4>
+      </div>
+      <div class="modal-body">
+
+        <div id="meetup-form-div">
+          <%= form_tag("/meetup", method: "put", id: "meetup-form") do %>
+            <%= hidden_field_tag(:group_id, @group.id) %>
+            <%= text_field_tag(:admin_user_search) %>
+            <%= submit_tag "Search", id: "admin-search-submit" %>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
