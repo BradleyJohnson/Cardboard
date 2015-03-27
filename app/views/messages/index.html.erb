@@ -1,7 +1,4 @@
-<h1>Private Messages</h1>
-<a href="#myModal" role=button class="btn btn-success" data-toggle="modal">
-  Compose Message
-</a>
+<!-- <a href="#myModal" role=button class="btn btn-success outline" data-toggle="modal">Compose Message</a> -->
 
 <%= render partial: "modals/direct_message_modal" %>
 
@@ -9,7 +6,9 @@
   <% @messages.each do |msg| %>
     <div class="panel panel-default">
       <div class="panel-heading">
-        <strong><%= msg.title %></strong>
+        <strong>From: </strong><%= msg.sender_username %>
+        <br>
+        <strong>Subject: </strong><%= msg.title %>
       </div>
       <div class="panel-body">
         <p><%= msg.body %></p>

@@ -2,13 +2,21 @@ module ApplicationHelper
 
   def returns_current_page_header
     if controller_name == 'collections' && action_name == 'index'
-      "War Chest"
+      current_user.username + "'s Collection"
     elsif controller_name == 'messages' && action_name == 'index'
-      "Dispatches"
-    elsif controller_name == 'groups'
-      "Guilds"
+      "Inbox"
+    elsif controller_name == 'groups' && action_name == 'all'
+      "Find a Group"
+    elsif controller_name == 'groups' && action_name == 'index'
+      "Your Groups"
+    elsif controller_name == 'groups' && action_name == 'show'
+      @group.name
+    elsif controller_name == 'groups' && action_name == 'new'
+      "New Group"
     elsif controller_name == 'account'
       "Account"
+    elsif controller_name == 'admin'
+      "Admin Panel"
     end
   end
 
@@ -27,6 +35,14 @@ module ApplicationHelper
 
   def collection_active
     if controller_name == 'collections' && action_name == 'index'
+      "active"
+    else
+      nil
+    end
+  end
+
+  def profile_active
+    if controller_name == 'profiles' && action_name == 'index'
       "active"
     else
       nil

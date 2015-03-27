@@ -1,9 +1,7 @@
 <h3>All Groups</h3>
+<hr>
 <% if @groups %>
-  <dl>
-    <% @groups.each do |group| %>
-        <dt><%= group.name %></dt> - <dd><%= link_to "View Group", group_path(group), class: "btn btn-xs btn-primary" %></dd>
-        <hr>
-    <% end %>
-  </dl>
+  <% @groups.each do |group| %>
+    <h3><%= link_to group.name, group_path(group) %></h3>
+  <% end %>
 <% end %>

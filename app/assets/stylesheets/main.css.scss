@@ -1,0 +1,217 @@
+// VARS
+$header-fonts: "Unica One", Helvetica, Arial, sans-serif;
+$body-fonts: "Vollkorn", Helvetica, Arial, sans-serif;
+
+$brand-color: #EC583A;
+$brand-complement-1: #3AECB1;
+$brand-complement-2: #ECB13A;
+$brand-complement-3: #763AEC;
+$dark-grey: #778288;
+$light-grey: #DDD;
+
+
+
+
+// SIDEBAR
+@media (min-width: 768px) {
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+  }
+  .sidebar-nav .navbar ul:not {
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
+
+
+// DL STRUCTURE
+dt:before {
+  content: "";
+  display: block;
+}
+dt, dd {
+  display: inline;
+}
+
+
+
+// ADMIN SEARCH
+#search-form {
+  margin-bottom: 10px;
+}
+
+
+
+// HEADERS
+#board-logo a {
+  font-family: $header-fonts;
+  color: $brand-color;
+  text-decoration: none;
+}
+
+#header-logo {
+  color: $dark-grey;
+  display: inline-block;
+}
+
+
+
+// GENERAL
+span {
+  margin: 0px 2.5px;
+}
+
+.sidebar-nav span {
+  margin: 0px 5px;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #DDD;
+}
+a {
+  text-decoration: none;
+  color: #DDD;
+}
+
+#primary-content h1,
+#primary-content h2,
+#primary-content h3,
+#primary-content h4,
+#primary-content h5,
+#primary-content h6 {
+  color: $light-grey;
+}
+
+.item {
+  margin: 5px;
+}
+
+body {
+  font-family: $body-fonts;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #FFF;
+}
+
+h1, h2, h3, h4, h5, h6, {
+  font-family: $header-fonts;
+}
+
+#primary-content {
+  background: #cfa76e;
+  background-image: image-url("ZenBG.png");
+}
+
+img {
+  padding: 1px;
+  background: $dark-grey;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#quicksearch {
+  background: hsla(0, 0%, 31%, 0.8);
+  border-radius: 3px;
+  color: #F5F5F5;
+  padding: 5px 5px 5px 15px;
+  margin: 5px;
+  border: 1px solid #F5F5F5;
+}
+
+
+
+
+
+// BOOTSTRAP OVERRIDES
+
+// NAVBAR
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #F5F5F5;
+  background-color: $dark-grey;
+}
+
+.navbar {
+  background: $light-grey;
+}
+
+li .has-unread {
+  background-color: $brand-color;
+}
+
+
+
+// PANEL
+.panel-heading {
+  background-color: $dark-grey;
+}
+
+.panel-body {
+  background-color: $light-grey;
+}
+
+
+
+// BUTTONS
+
+.btn.outline {
+    background: none;
+    padding: 8px 17px;
+    margin: 10px 3px;
+    text-transform: bold;
+}
+
+.btn-success.outline {
+    border: 2px solid $light-grey;
+    color: $light-grey;
+}
+
+.btn-success.outline:hover,
+.btn-success.outline:focus,
+.btn-success.outline:active,
+.btn-success.outline.active,
+.open > .dropdown-toggle.btn-success {
+    color: $brand-complement-1;
+    border-color: $brand-complement-1;
+}
+
+.btn-primary.outline {
+    border: 2px solid $light-grey;
+    color: $light-grey;
+}
+.btn-primary.outline:hover,
+.btn-primary.outline:focus,
+.btn-primary.outline:active,
+.btn-primary.outline.active,
+.open > .dropdown-toggle.btn-primary {
+    color: $brand-complement-2;
+    border-color: $brand-complement-2;
+}
+
+.btn-danger.outline {
+    border: 2px solid $light-grey;
+    color: $light-grey;
+}
+.btn-danger.outline:hover,
+.btn-danger.outline:focus,
+.btn-danger.outline:active,
+.btn-danger.outline.active,
+.open > .dropdown-toggle.btn-danger {
+  color: $brand-color;
+  border-color: $brand-color;
+}

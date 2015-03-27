@@ -8,43 +8,26 @@ WHERE I LEFT OFF:
         application controller and also a new AdminController to handle the actions on the admin page. To lock someone
         out of the page do a before_filter on the Admin controller that calls the authorize_user method and redirect
         with a notice if the user isn't authorized.
-
 ------------------------------------------------------------------------
-
-
-
-------------------------------------------------------------------------
-
-
-
-
-BGG API
-  http://www.boardgamegeek.com/xmlapi/boardgame/<game id>  game id example: 12333 (twilight struggle)
-  http://bgg-json.azurewebsites.net/collection/<user name>  game id example: etochort (nice 3rd party json)
+Things to do
+1. Clean up groups layout
+2. Clean up buttons and where to put them
+3. Meetups
+4. Matches
+5. Clean up Admin layout
 
 
 ------------------------------------------------------------------------
 
 Questions for John/Colt
 
-  1. How to store a variable amount of attributes on an active record model. ie I will have a game model and sometime
-  that game model will have a single game mechanic on it, such as "Hand Management". Othertimes, with complex games
-  I will have multiple game mechanics like "Hand Management", "Card Drafting", and "Area Control". Whats the best way
-  to simulate this in a model? Would it be best to create another model for game mechanics and simply use a join
-  table?
-        ##### Create a new model Mechanic. It will have one property eg "Card Drafting" or "Dice Rolling". Then
-              then establish a one to many relationship with a game model. One game has many mechanics. A mechanic
-              belongs to a game.
+1. Talk about modeling the meetups
 
-  2. Ask about whether or not it's best to scrape the API or just call it. It would be nice to simply call it but
-  their data is pretty weird, comes back in XML and seems to be generally disorganized. One concern, how would I account
-  for people owning copies of the same game.
+2. Ask about calendar plugins
 
-  3. How to perform authorization through an ajax call. For example in those handlers for making someone an admin or
-  booting them from group. Do I send the session with the request? Then handle the authorization at the controller? They
-  are authorized once when they hit the admin page. Is that enough?
+3. Ask about where to put those fucking buttons
 
-  4. Ask how to inherit rails helpers like redirect_to and path helpers for my service objects.
+4. Page specific css rules
 
 
 
@@ -64,6 +47,25 @@ Archive
   an Admin of that group.
 
   5. Test helpers? Factory Girl? Really sick of long winded test setup.
+
+  1. How to store a variable amount of attributes on an active record model. ie I will have a game model and sometime
+  that game model will have a single game mechanic on it, such as "Hand Management". Othertimes, with complex games
+  I will have multiple game mechanics like "Hand Management", "Card Drafting", and "Area Control". Whats the best way
+  to simulate this in a model? Would it be best to create another model for game mechanics and simply use a join
+  table?
+        ##### Create a new model Mechanic. It will have one property eg "Card Drafting" or "Dice Rolling". Then
+              then establish a one to many relationship with a game model. One game has many mechanics. A mechanic
+              belongs to a game.
+
+  2. Ask about whether or not it's best to scrape the API or just call it. It would be nice to simply call it but
+  their data is pretty weird, comes back in XML and seems to be generally disorganized. One concern, how would I account
+  for people owning copies of the same game.
+
+  3. How to perform authorization through an ajax call. For example in those handlers for making someone an admin or
+  booting them from group. Do I send the session with the request? Then handle the authorization at the controller? They
+  are authorized once when they hit the admin page. Is that enough?
+
+  4. Ask how to inherit rails helpers like redirect_to and path helpers for my service objects.
 
 
 

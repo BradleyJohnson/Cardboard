@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
-    @messages = Message.where(recipient_username: current_user.username, unread: true)
+    @messages = Message.where(recipient_username: current_user.username)
     UpdateMessagesService.new(@messages).update
   end
 

@@ -13,6 +13,7 @@
       <div class="navbar-collapse collapse sidebar-navbar-collapse">
 
         <ul class="nav navbar-nav">
+          <li class="<%= profile_active %>"><a href="/"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Profile</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>Dashboard</a></li>
           <li class="<%= collection_active %>"><a href="/collection"><span class="glyphicon glyphicon-knight" aria-hidden="true"></span>My Collection</a></li>
           <li class="<%= inbox_active %>"><a href="/messages"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Inbox<span class="badge<%= has_unread? %>"><%= @message_count %></span></a></li>
@@ -21,12 +22,12 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>Groups<b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="/groups">My Groups</a></li>
-              <li><a href="/find-groups">Find a Group</a></li>
-              <li><a href="/groups/new">Found a Group</a></li>
-              <li class="divider"></li>
+              <li><a href="/find-groups">Join a Group</a></li>
+              <li><a href="/groups/new">Create a new Group</a></li>
+              <!-- <li class="divider"></li>
               <li class="dropdown-header">Nav header</li>
               <li><a href="#">Separated link</a></li>
-              <li><a href="#">One more separated link</a></li>
+              <li><a href="#">One more separated link</a></li> -->
             </ul>
           </li>
           <li class="<%= account_active %>"><a href="/account"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Account</a></li>

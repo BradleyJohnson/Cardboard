@@ -1,79 +1,102 @@
-body {
-  font-family: "Vollkorn", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #333;
-  background-color: #FFF;
-}
-
-h1 {
-  font-family: "Unica One", Helvetica, Arial, sans-serif;
-}
-
-/*LOGO HEADER*/
-#board-logo a {
-  font-family: 'Unica One', Helvetica, sans-serif;
-  color: #EC583A;
-}
-
-#header-logo {
-  color: #778288;
-}
-/*LOGO HEADER*/
-
-
-
-/*NAVBAR*/
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-  color: #F5F5F5;
-  background-color: #778288;
-}
-
-.navbar {
-  background: #DDD;
-}
-
-li .has-unread {
-  background-color: #EC583A;
-}
-
-.item {
-  margin: 5px;
-}
-
-img {
-  padding: 1px;
-  background: #778288;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-
-#primary-content {
-  background: #cfa76e;
-  background-image: image-url("ZenBG.png");
-
-}
-
-
-#quicksearch {
-  background: hsla(0, 0%, 31%, 0.8);
-  border-radius: 3px;
-  color: #F5F5F5;
-  padding: 5px 5px 5px 15px;
-  margin: 5px;
-  border: 1px solid #F5F5F5;
-}
-
-/*COLORS
-#555 default text
-
-#F5F5F5
-#C7D0D5
-#93B1C6
-#FF7148
-#EC583A
-
-COLORS*/
+// $header-fonts: "Unica One", Helvetica, Arial, sans-serif;
+// $body-fonts: "Vollkorn", Helvetica, Arial, sans-serif;
+//
+// $brand-color: #EC583A;
+// $brand-complement-1: #079F64;
+// $dark-grey: #778288;
+// $light-grey: #DDD;
+//
+//
+// // GENERAL
+// body {
+//   font-family: $body-fonts;
+//   font-size: 14px;
+//   line-height: 1.42857143;
+//   color: #333;
+//   background-color: #FFF;
+// }
+//
+// h1 {
+//   font-family: $header-fonts;
+// }
+//
+// #primary-content {
+//   background: #cfa76e;
+//   background-image: image-url("ZenBG.png");
+// }
+//
+// img {
+//   padding: 1px;
+//   background: $dark-grey;
+//   border-radius: 3px;
+//   cursor: pointer;
+// }
+//
+// #quicksearch {
+//   background: hsla(0, 0%, 31%, 0.8);
+//   border-radius: 3px;
+//   color: #F5F5F5;
+//   padding: 5px 5px 5px 15px;
+//   margin: 5px;
+//   border: 1px solid #F5F5F5;
+// }
+//
+// .big-username {
+//   color: $light-grey;
+// }
+//
+//
+// // HEADERS
+// #board-logo a {
+//   font-family: $header-fonts;
+//   color: $brand-color;
+//   text-decoration: none;
+// }
+//
+// #header-logo {
+//   color: $dark-grey;
+//   display: inline-block;
+// }
+//
+//
+// // NAVBAR
+// .navbar-default .navbar-nav > .active > a,
+// .navbar-default .navbar-nav > .active > a:hover,
+// .navbar-default .navbar-nav > .active > a:focus {
+//   color: #F5F5F5;
+//   background-color: $dark-grey;
+// }
+//
+// .navbar {
+//   background: $light-grey;
+// }
+//
+// li .has-unread {
+//   background-color: $brand-color;
+// }
+//
+// .item {
+//   margin: 5px;
+// }
+//
+//
+// // PANEL
+// .panel-heading {
+//   background-color: $dark-grey;
+// }
+//
+// .panel-body {
+//   background-color: $light-grey;
+// }
+//
+//
+// // PRIMARY CONTENT
+//
+// #primary-content h1,
+// #primary-content h2,
+// #primary-content h3,
+// #primary-content h4,
+// #primary-content h5,
+// #primary-content h6 {
+//   color: $light-grey;
+// }

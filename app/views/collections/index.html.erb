@@ -7,7 +7,7 @@
 <div id="masonry-div">
   <% @collections.each do |game| %>
     <div class="item"
-      data-game-name="<%= game.name.downcase %>"
+      data-game-name="<%= game.name %>"
       data-game-description="<%= game.description %>"
       data-year-published="<%= game.year_published %>"
       data-min-players="<%= game.min_players %>"
