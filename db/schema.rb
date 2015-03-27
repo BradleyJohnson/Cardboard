@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150327170210) do
+ActiveRecord::Schema.define(version: 20150327193920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,16 @@ ActiveRecord::Schema.define(version: 20150327170210) do
     t.string   "sender_username"
     t.string   "recipient_username"
   end
+
+  create_table "rsvps", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "meetup_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rsvps", ["meetup_id"], name: "index_rsvps_on_meetup_id", using: :btree
+  add_index "rsvps", ["user_id"], name: "index_rsvps_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

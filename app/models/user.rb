@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
   has_many :collections
   has_many :games, through: :collections
 
-  has_and_belongs_to_many :meetups
-  # has_and_belongs_to_many :meetups,  join_table: :users_meetups
+  has_many :rsvps
+  has_many :meetups, through: :rsvps
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
