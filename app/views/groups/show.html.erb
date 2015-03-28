@@ -18,13 +18,12 @@
     <hr>
 
     <p>
-      <strong>Upcoming meetups: </strong><%#= @group.meetups %>
+      <strong>Upcoming meetups: </strong>
     </p>
     <ul>
-      <li>January 47th, 5 PM @ Muddy's</li>
-      <li>Martember 5st, 5 PM @ The Red Vic</li>
-      <li>Augurary 112th, 5 PM @ Gamescape</li>
-      <li>Juny 4th, 5 PM @ Muddy's</li>
+      <% @group.meetups.each do |meetup| %>
+        <li><%= link_to "#{meetup.location_string}" + " - " + "#{meetup.meetup_date.strftime("%A, %b %d")}" + " @ " + "#{meetup.start_time.strftime("%I:%M %p")}", meetup_path %></li>
+      <% end %>
     </ul>
   </div>
 </div>

@@ -59,6 +59,7 @@ dt, dd {
   font-family: $header-fonts;
   color: $brand-color;
   text-decoration: none;
+  font-size: 1.5em;
 }
 
 #header-logo {
@@ -83,7 +84,8 @@ a:hover {
 }
 a {
   text-decoration: none;
-  color: #DDD;
+  // color: #DDD;
+  color: $brand-color;
 }
 
 #primary-content h1,
@@ -193,6 +195,8 @@ li .has-unread {
     color: $brand-complement-1;
     border-color: $brand-complement-1;
 }
+
+
 
 .btn-primary.outline {
     border: 2px solid $light-grey;

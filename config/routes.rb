@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'welcome#home'
 
   resources :messages
-
+  resources :meetups
   resources :groups
   get 'find-groups' => 'groups#all'
 

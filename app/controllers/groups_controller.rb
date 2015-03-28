@@ -24,6 +24,7 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @membership = Membership.find_by(group_id: @group.id, user_id: current_user.id)
+    @meetups = @group.meetups
   end
 
 

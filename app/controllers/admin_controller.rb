@@ -5,6 +5,7 @@ def show
   @group = Group.find(params[:id])
   @founder = @group.founder
   @administrators = @group.admin
+  @meetup = Meetup.new
 end
 
 
