@@ -12,7 +12,7 @@ class GroupsController < ApplicationController
   end
 
   def create
-    founded_group = FoundGroupService.new(group_params[:name], current_user.id).found
+    founded_group = FoundGroupService.new(group_params, current_user.id).found
 
     if founded_group
       redirect_to groups_path
@@ -30,6 +30,6 @@ class GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:name)
+    params.require(:group).permit(:name, :description, :location)
   end
 end

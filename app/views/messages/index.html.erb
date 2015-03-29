@@ -4,15 +4,12 @@
 
 <% if @messages %>
   <% @messages.each do |msg| %>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <strong>From: </strong><%= msg.sender_username %>
-        <br>
-        <strong>Subject: </strong><%= msg.title %>
-      </div>
-      <div class="panel-body">
-        <p><%= msg.body %></p>
-      </div>
+    <div class="well">
+      <strong>From: </strong><%= msg.sender_username %>
+      <br>
+      <strong>Subject: </strong><%= msg.title %>
+      <hr>
+      <p><%= msg.body %></p>
     </div>
   <% end %>
 <% end %>

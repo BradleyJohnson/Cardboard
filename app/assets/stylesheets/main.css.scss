@@ -59,7 +59,7 @@ dt, dd {
   font-family: $header-fonts;
   color: $brand-color;
   text-decoration: none;
-  font-size: 1.5em;
+  // font-size: 1.5em;
 }
 
 #header-logo {
@@ -116,6 +116,7 @@ h1, h2, h3, h4, h5, h6, {
 #primary-content {
   background: #cfa76e;
   background-image: image-url("ZenBG.png");
+  padding: 40px;
 }
 
 img {
@@ -126,6 +127,23 @@ img {
 }
 
 #quicksearch {
+  // background: hsla(0, 0%, 31%, 0.8);
+  // border-radius: 3px;
+  // color: #F5F5F5;
+  // padding: 5px 5px 5px 15px;
+  // margin: 5px;
+  // border: 1px solid #F5F5F5;
+}
+
+ul {
+  list-style: none;
+}
+
+div label {
+  color: $light-grey;
+}
+
+.styled-input {
   background: hsla(0, 0%, 31%, 0.8);
   border-radius: 3px;
   color: #F5F5F5;
@@ -134,15 +152,15 @@ img {
   border: 1px solid #F5F5F5;
 }
 
-ul {
-  list-style: none;
-}
-
-
-
-
 
 // BOOTSTRAP OVERRIDES
+
+// NESTED WELLS
+
+#primary-content .well {
+  background: hsla(0, 0%, 87%, .8);
+}
+
 
 // NAVBAR
 .navbar-default .navbar-nav > .active > a,
