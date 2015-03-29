@@ -2,7 +2,6 @@ class MeetupsController < ApplicationController
   def create
     @meetup = Meetup.new(meetup_params)
     @meetup.save
-    binding.pry
     redirect_to group_path(params[:meetup][:group_id])
   end
 

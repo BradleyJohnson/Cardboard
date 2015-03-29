@@ -1,6 +1,5 @@
 require 'open-uri'
 require 'nokogiri'
-require 'pry'
 require 'json'
 require 'active_support/core_ext'
 
