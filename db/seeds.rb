@@ -3,6 +3,9 @@ require 'nokogiri'
 require 'json'
 require 'active_support/core_ext'
 
+require 'game_id_getter_service'
+require 'game_maker_service'
+
 top_thousand = [
   "https://boardgamegeek.com/browse/boardgame/page/1",
   "https://boardgamegeek.com/browse/boardgame/page/2",
