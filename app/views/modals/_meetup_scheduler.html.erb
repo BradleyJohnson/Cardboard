@@ -10,7 +10,6 @@
         <div id="meetup-form-div">
           <%= form_for @meetup, html: {class: "form-horizontal"} do |f| %>
 
-            <%#= f.hidden_field {group_id: @group.id} %>
             <%= f.hidden_field :group_id, :value => @group.id %>
 
             <div class="form-group">

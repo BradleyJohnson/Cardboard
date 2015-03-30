@@ -2,7 +2,8 @@
 $header-fonts: "Unica One", Helvetica, Arial, sans-serif;
 $body-fonts: "Vollkorn", Helvetica, Arial, sans-serif;
 
-$brand-color: #EC583A;
+// $brand-color: #EC583A;
+$brand-color: #ECC436;
 $brand-complement-1: #3AECB1;
 $brand-complement-2: #ECB13A;
 $brand-complement-3: #763AEC;
@@ -33,6 +34,10 @@ $light-grey: #DDD;
     padding-bottom: 12px;
   }
 }
+
+// MODALS
+
+
 
 
 
@@ -117,6 +122,7 @@ h1, h2, h3, h4, h5, h6, {
   background: #cfa76e;
   background-image: image-url("ZenBG.png");
   padding: 40px;
+  color: $light-grey;
 }
 
 img {
@@ -151,6 +157,11 @@ div label {
   margin: 5px;
   border: 1px solid #F5F5F5;
 }
+
+.indented-text {
+  text-indent: 30px;
+}
+
 
 
 // BOOTSTRAP OVERRIDES

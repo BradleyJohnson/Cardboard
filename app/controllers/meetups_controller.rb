@@ -6,7 +6,7 @@ class MeetupsController < ApplicationController
   end
 
   def show
-
+    @meetup = Meetup.find(params[:id])
   end
 
 

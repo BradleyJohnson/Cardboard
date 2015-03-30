@@ -1,20 +1,19 @@
-<div class="well">
-  <p><strong>Where: </strong><%= @group.location %></p>
+<p><strong>Where: </strong><%= @group.location %></p>
 
-  <p><strong>What: </strong><%= @group.description %></p>
+<p><strong>What: </strong><%= @group.description %></p>
 
-  <p><strong>Members: </strong><%= @group.users.count %></p>
+<p><strong>Members: </strong><%= @group.users.count %></p>
 
-  <hr>
+<hr>
 
-  <p><strong>Upcoming meetups: </strong></p>
+<p><strong>Upcoming meetups: </strong></p>
 
-  <ul>
-    <% @group.meetups.each do |meetup| %>
-      <li><%= link_to "#{meetup.location_string}" + " - " + "#{meetup.meetup_date.strftime("%A, %b %d")}" + " @ " + "#{meetup.start_time.strftime("%I:%M %p")}", meetup_path %></li>
-    <% end %>
-  </ul>
-</div>
+<ul>
+  <% @group.meetups.each do |meetup| %>
+    <li><%= link_to "#{meetup.location_string}" + " - " + "#{meetup.meetup_date.strftime("%A, %b %d")}" + " @ " + "#{meetup.start_time.strftime("%I:%M %p")}", meetup_path(meetup) %></li>
+  <% end %>
+</ul>
+
 
 <%= render_join_button %>
 <%= render_leave_button %>

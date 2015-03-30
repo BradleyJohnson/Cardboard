@@ -1,8 +1,10 @@
-<h1>WHERE IS IT + ADDRESS</h1>
+<%= form_tag rsvps_path, method: :post do %>
+  <%= submit_tag 'RSVP to this meetup', class: "btn btn-primary outline" %>
+<% end %>
 
-<h1>Notes</h1>
+<h1><%= @meetup.location_string %></h1>
 
-<h1>MAP</h1>
+<h3 class="indented-text"><%= @meetup.location_address %></h3>
 
 <h1>PEOPLE WHO'VE RSVPed</h1>
 

@@ -6,7 +6,7 @@ module ApplicationHelper
     elsif controller_name == 'messages' && action_name == 'index'
       "Inbox"
     elsif controller_name == 'groups' && action_name == 'all'
-      "Find a Group"
+      "All Groups"
     elsif controller_name == 'groups' && action_name == 'index'
       "Your Groups"
     elsif controller_name == 'groups' && action_name == 'show'

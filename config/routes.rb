@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :messages
   resources :meetups
   resources :groups
+
+  post 'rsvps' => 'rsvps#create'
+
   get 'find-groups' => 'groups#all'
 
   get 'groups/:id/admin' => 'admin#show', as: :admin
