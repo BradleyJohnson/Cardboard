@@ -43,12 +43,14 @@ class GameMaker
         max_players: game_json["items"]["item"]["maxplayers"]["value"],
         bgg_id: game_json["items"]["item"]["id"]
       )
-    @mechanics.each do |mech_string|
-      Mechanic.create(mechanic_type: mech_string, game_id: @new_game.id)
-    end
 
     if @new_game.valid?
       @new_game.save!
+      puts "Added #{@name}"
+    end
+
+    @mechanics.each do |mech_string|
+      Mechanic.create(mechanic_type: mech_string, game_id: @new_game.id)
     end
 
     sleep 1
