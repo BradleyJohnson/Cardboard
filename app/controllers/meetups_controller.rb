@@ -7,6 +7,14 @@ class MeetupsController < ApplicationController
 
   def show
     @meetup = Meetup.find(params[:id])
+    @attendees = User.joins(:rsvps).where(rsvps: { meetup_id: @meetup.id})
+    @collections = []
+
+    @attendees.each do |user|
+      user.games.each do |game|
+        @collections.push(game)
+      end
+    end
   end
 
 
