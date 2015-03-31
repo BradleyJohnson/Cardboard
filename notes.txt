@@ -4,10 +4,7 @@ WHERE I LEFT OFF:
     or remove from group, etc etc. Then I can write those tests.
 
 
-        #### Create a new page for the admin stuff 3000/group/1/admin and create an #authorize_user method on the
-        application controller and also a new AdminController to handle the actions on the admin page. To lock someone
-        out of the page do a before_filter on the Admin controller that calls the authorize_user method and redirect
-        with a notice if the user isn't authorized.
+
 ------------------------------------------------------------------------
 Things to do
 1. Clean up groups layout
@@ -21,11 +18,11 @@ Things to do
 
 Questions for John/Colt
 
-1. Talk about modeling the meetups
+1. How to model matches and results
 
-2. Ask about calendar plugins
+2. Why is my heroku import collection broken?
 
-3. Ask about where to put those fucking buttons
+3. Talk about testing
 
 4. Page specific css rules
 

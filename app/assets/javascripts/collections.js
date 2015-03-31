@@ -32,6 +32,13 @@ $(document).ready(function() {
   });
 
 
+  // Slide toggler for collection view
+  $("#collection-toggle").on("click", function() {
+    $("#collection-toggle").toggleClass("rotated");
+    $("#games-available").slideToggle();
+  });
+
+
   // quick search regex
   $( function() {
     var qsRegex;

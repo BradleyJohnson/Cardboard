@@ -99,7 +99,7 @@ a {
 #primary-content h4,
 #primary-content h5,
 #primary-content h6 {
-  color: $light-grey;
+  color: $brand-color;
 }
 
 .item {
@@ -108,7 +108,7 @@ a {
 
 body {
   font-family: $body-fonts;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.42857143;
   color: #333;
   background-color: #FFF;
@@ -122,7 +122,7 @@ h1, h2, h3, h4, h5, h6, {
   background: #cfa76e;
   background-image: image-url("ZenBG.png");
   padding: 40px;
-  color: $light-grey;
+  // color: $light-grey;
 }
 
 img {
@@ -158,10 +158,29 @@ div label {
   border: 1px solid #F5F5F5;
 }
 
-.indented-text {
-  text-indent: 30px;
+#rsvp-info {
+  color: $dark-grey;
 }
 
+.rotated {
+  transform: rotate(180deg);
+  -ms-transform: rotate(180deg); /* IE 9 */
+  -moz-transform: rotate(180deg); /* Firefox */
+  -webkit-transform: rotate(180deg); /* Safari and Chrome */
+  -o-transform: rotate(180deg); /* Opera */
+}
+
+.brand-color {
+  color: $brand-color;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.light-grey {
+  color: $light-grey;
+}
 
 
 // BOOTSTRAP OVERRIDES

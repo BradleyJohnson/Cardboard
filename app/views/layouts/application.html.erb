@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Board Boss</title>
+  <title>Cardboard</title>
   <%= stylesheet_link_tag    'application' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -19,9 +19,8 @@
     </div>
 
     <div class="row">
-
       <%= render partial: "shared/navbar" %>
-
+      
       <div class="col-sm-9 well" id="primary-content"> <!-- main content-->
         <% if notice || alert %>
           <p class="notice"><%= notice %></p>
@@ -30,8 +29,8 @@
 
         <%= yield %>
       </div>
-
     </div>
+
   </div>
 </body>
 </html>
