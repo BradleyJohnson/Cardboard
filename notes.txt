@@ -7,11 +7,14 @@ WHERE I LEFT OFF:
 
 ------------------------------------------------------------------------
 Things to do
-1. Clean up groups layout
-2. Clean up buttons and where to put them
-3. Meetups
-4. Matches
-5. Clean up Admin layout
+- Clean up groups layout
+- Clean decide on button colors
+- Matches
+- Clean up modals
+- Clean up Admin layout
+- Send email when meetup is scheduled
+- Send reminder to bring a game if it's nominated
+- Send email for confirmation about game results
 
 
 ------------------------------------------------------------------------

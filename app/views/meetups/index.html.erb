@@ -1,0 +1,5 @@
+<ul>
+  <% @meetups.each do |meetup| %>
+    <li><h3><%= link_to "#{meetup.location_string}" + " - " + "#{meetup.meetup_date.strftime("%A, %b %d")}" + " @ " + "#{meetup.start_time.strftime("%I:%M %p")}", meetup_path(meetup) %></h3></li>
+  <% end %>
+</ul>

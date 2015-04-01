@@ -20,11 +20,14 @@
 
     <div class="row">
       <%= render partial: "shared/navbar" %>
-      
+
       <div class="col-sm-9 well" id="primary-content"> <!-- main content-->
-        <% if notice || alert %>
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+
+        <% if notice %>
+          <div class="notice alert-success"><%= notice %></div>
+        <% end %>
+        <% if alert %>
+          <div class="alert alert-warning"><%= alert %></div>
         <% end %>
 
         <%= yield %>

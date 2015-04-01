@@ -10,4 +10,15 @@ class Meetup < ActiveRecord::Base
 
   has_many :rsvps
   has_many :users, through: :rsvps
+
+  def aggregate_collections(attendees)
+    aggregate = []
+
+    attendees.each do |user|
+      user.games.each do |game|
+        aggregate.push(game)
+      end
+    end
+    aggregate
+  end
 end

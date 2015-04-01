@@ -13,6 +13,8 @@ module ApplicationHelper
       @group.name
     elsif controller_name == 'groups' && action_name == 'new'
       "New Group"
+    elsif controller_name == 'meetups'
+      "Meetups"
     elsif controller_name == 'account'
       "Account"
     elsif controller_name == 'admin'
@@ -67,6 +69,14 @@ module ApplicationHelper
 
   def account_active
     if controller_name == 'account'
+      "active"
+    else
+      nil
+    end
+  end
+
+  def meetup_active
+    if controller_name == 'meetups'
       "active"
     else
       nil

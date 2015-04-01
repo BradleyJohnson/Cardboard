@@ -1,4 +1,8 @@
 class MeetupsController < ApplicationController
+  def index
+    @meetups = current_user.meetups
+  end
+
   def create
     @meetup = Meetup.new(meetup_params)
     @meetup.save
@@ -8,16 +12,8 @@ class MeetupsController < ApplicationController
   def show
     @meetup = Meetup.find(params[:id])
     @attendees = User.joins(:rsvps).where(rsvps: { meetup_id: @meetup.id})
-    @collections = []
-
-    @attendees.each do |user|
-      user.games.each do |game|
-        @collections.push(game)
-      end
-    end
+    @collections = @meetup.aggregate_collections(@attendees)
   end
-
-
 
   private
 
