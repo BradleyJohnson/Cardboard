@@ -6,7 +6,7 @@ $body-fonts: "Vollkorn", Helvetica, Arial, sans-serif;
 $brand-color: #ECC436;
 $brand-complement-1: #3AECB1;
 $brand-complement-2: #ECB13A;
-$brand-complement-3: #763AEC;
+$brand-complement-3: #EC583A;
 $dark-grey: #778288;
 $light-grey: #DDD;
 
@@ -188,7 +188,8 @@ div label {
 // NESTED WELLS
 
 #primary-content .well {
-  background: hsla(0, 0%, 87%, .8);
+  // background: hsla(0, 0%, 87%, .8);
+  background: hsla(0, 0%, 0%, .4);
 }
 
 
@@ -268,6 +269,6 @@ li .has-unread {
 .btn-danger.outline:active,
 .btn-danger.outline.active,
 .open > .dropdown-toggle.btn-danger {
-  color: $brand-color;
-  border-color: $brand-color;
+  color: $brand-complement-3;
+  border-color: $brand-complement-3;
 }

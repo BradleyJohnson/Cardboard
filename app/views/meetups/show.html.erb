@@ -6,18 +6,54 @@
   <% end %>
 <% end %>
 <button type="button" name="button" class="btn btn-primary outline">Log a Result</button>
+<button type="button" name="button" class="btn btn-danger outline">Post a Comment</button>
 
 <hr>
 
 <div id="meetup-info">
-  <h3 class="brand-color"><%= @meetup.location_string %></span></h3>
+  <h3><%= @meetup.location_string %></h3>
   <p class="light-grey"><%= @meetup.location_address %></p>
   <h3>Notes</h3>
   <p class="light-grey"><%= @meetup.meetup_notes %></p>
+  <h3>Comments</h3>
+
+  <%= form_for @comment, html: {class: "form-horizontal"} do |f| %>
+
+    <%= f.hidden_field :commentable_type, :value => @meetup.class %>
+    <%= f.hidden_field :commentable_id, :value => @meetup.id %>
+
+    <div class="form-group">
+      <%= f.text_field :title, placeholder: "Title", class: "col-md-8 styled-input" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.text_area :body, placeholder: "Body", class: "col-md-8 styled-input" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit class: "btn btn-success outline" %>
+      <%= link_to "Cancel", admin_path, class: "btn btn-danger outline" %>
+    </div>
+
+  <% end %>
+
+  <!-- <div class="well">
+    <h5>etochort</h5>
+    <p class="light-grey">
+      This is a title that is kind of long
+    </p>
+    <hr>
+    <p class="light-grey">
+      Hipster paragraphs about gourmet cheeses and custom Italian bike frame.
+      Brew your own kombucha and where courier hats.Hipster paragraphs about gourmet cheeses and custom Italian bike frame.
+      Brew your own kombucha and where courier hats.
+
+      Hipster paragraphs about gourmet cheeses and custom Italian bike frame. Brew your own kombucha and where courier hats.
+    </p>
+  </div> -->
 </div>
 
-
-<h2 class="inline-block">GAMES AVAILABLE</h2><span class="glyphicon glyphicon-collapse-up light-grey" aria-hidden="true" id="collection-toggle"></span>
+<h3 class="inline-block">GAMES AVAILABLE</h3><span class="glyphicon glyphicon-collapse-up light-grey" aria-hidden="true" id="collection-toggle"></span>
 <div id="games-available">
   <input id="quicksearch" class="styled-input" type="text" name="name" value="" placeholder="Filter">
 

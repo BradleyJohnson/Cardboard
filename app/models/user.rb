@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   has_many :rsvps
   has_many :meetups, through: :rsvps
 
+  has_many :comments, as: :commentable
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

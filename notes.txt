@@ -15,6 +15,7 @@ Things to do
 - Send email when meetup is scheduled
 - Send reminder to bring a game if it's nominated
 - Send email for confirmation about game results
+- Favicon
 
 
 ------------------------------------------------------------------------

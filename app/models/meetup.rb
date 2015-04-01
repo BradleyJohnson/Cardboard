@@ -4,12 +4,16 @@ class Meetup < ActiveRecord::Base
             :meetup_notes,
             :meetup_date,
             :start_time,
-            :end_time, presence: true
+            :end_time,
+            :group_id,
+            presence: true
 
   belongs_to :group
 
   has_many :rsvps
   has_many :users, through: :rsvps
+
+  has_many :comments, as: :commentable
 
   def aggregate_collections(attendees)
     aggregate = []
