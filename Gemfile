@@ -25,6 +25,7 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'spring', '~> 1.3.1'
+  gem 'rails-erd'
 end
 
 group :production do

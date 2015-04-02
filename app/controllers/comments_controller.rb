@@ -3,15 +3,18 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
 
     if @comment.save
-      puts "COMMENT SAVED"
+      render json: {
+        comment: @comment,
+        user: @comment.user
+      }
     else
-      puts "OOOOPS"
+      render json: @comment.errors.messages
     end
   end
 
   private
 
   def comment_params
-    params.require(:comment).permit(:title, :body, :commentable_type, :commentable_id)
+    params.require(:comment).permit(:title, :body, :commentable_type, :commentable_id, :user_id)
   end
 end

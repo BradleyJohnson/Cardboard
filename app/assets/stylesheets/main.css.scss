@@ -35,10 +35,6 @@ $light-grey: #DDD;
   }
 }
 
-// MODALS
-
-
-
 
 
 // DL STRUCTURE
@@ -188,8 +184,9 @@ div label {
 // NESTED WELLS
 
 #primary-content .well {
-  // background: hsla(0, 0%, 87%, .8);
-  background: hsla(0, 0%, 0%, .4);
+  background: hsla(0, 0%, 31%, 0.8);
+  font-size: .75em;
+  // background: hsla(0, 0%, 0%, .4);
 }
 
 

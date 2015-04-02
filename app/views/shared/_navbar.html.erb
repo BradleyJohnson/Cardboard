@@ -13,7 +13,7 @@
       <div class="navbar-collapse collapse sidebar-navbar-collapse">
 
         <ul class="nav navbar-nav">
-          <li class="<%= profile_active %>"><a href="/"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Profile</a></li>
+          <li class="<%= profile_active %>"><a href="/users/<%= current_user.id%>"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Profile</a></li>
           <li class="<%= collection_active %>"><a href="/collection"><span class="glyphicon glyphicon-knight" aria-hidden="true"></span>My Collection</a></li>
           <li class="<%= inbox_active %>"><a href="/messages"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Inbox<span class="badge<%= has_unread? %>"><%= @message_count %></span></a></li>
           <li class="<%= meetup_active %>"><a href="/meetups"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>My Meetups</a></li>

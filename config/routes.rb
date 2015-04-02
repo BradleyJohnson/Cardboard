@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :meetups
   resources :groups
   resources :comments
+  resources :users
 
   post 'rsvps' => 'rsvps#create'
 

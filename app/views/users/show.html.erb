@@ -1,0 +1,42 @@
+<div id="user-comments">
+  <h3 class="inline-block">Comments</h3><span class="glyphicon glyphicon-menu-up light-grey" aria-hidden="true" id="comments-toggle"></span><span class="glyphicon glyphicon-comment light-grey" aria-hidden="true" id="comment-form-toggle"></span>
+
+  <div id="comment-form">
+    <%= form_for @comment, html: {class: "form-horizontal"} do |f| %>
+
+      <%= f.hidden_field :commentable_type, :value => @user.class %>
+      <%= f.hidden_field :commentable_id, :value => @user.id %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+
+      <div class="form-group">
+        <%= f.text_field :title, placeholder: "Title", class: "col-md-8 styled-input", id: "comment-title" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.text_area :body, placeholder: "Body", class: "col-md-8 styled-input", id: "comment-body" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit class: "btn btn-success outline", id: "add-comment" %>
+        <%= link_to "Cancel", user_path(@user), class: "btn btn-danger outline" %>
+      </div>
+
+    <% end %>
+  </div>
+
+  <div id="comments-list">
+    <% @user.comments.each do |comment| %>
+      <div class="well">
+        <h4><%= comment.user.username  %></h4>
+        <hr>
+        <p class="light-grey">
+          <strong><%= comment.title %></strong>
+        </p>
+        <p class="light-grey">
+          <%= comment.body %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+
+</div>
