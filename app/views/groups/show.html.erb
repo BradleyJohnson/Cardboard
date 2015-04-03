@@ -1,12 +1,15 @@
-<p><strong>Where: </strong><%= @group.location %></p>
+<h3>Where:</h3>
+<p class="light-grey"><%= @group.location %></p>
 
-<p><strong>What: </strong><%= @group.description %></p>
+<h3>What:</h3>
+<p class="light-grey"><%= @group.description %></p>
 
-<p><strong>Members: </strong><%= @group.users.count %></p>
+<h3>Members:</h3>
+<p class="light-grey"><%= @group.users.count %></p>
 
 <hr>
 
-<p><strong>Upcoming meetups: </strong></p>
+<h3>Upcoming meetups:</h3>
 
 <ul>
   <% @group.meetups.each do |meetup| %>
