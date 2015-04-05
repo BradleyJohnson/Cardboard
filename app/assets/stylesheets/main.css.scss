@@ -2,11 +2,9 @@
 $header-fonts: "Unica One", Helvetica, Arial, sans-serif;
 $body-fonts: "Vollkorn", Helvetica, Arial, sans-serif;
 
-// $brand-color: #EC583A;
 $brand-color: #ECC436;
-$brand-complement-1: #3AECB1;
-$brand-complement-2: #ECB13A;
-$brand-complement-3: #EC583A;
+// $brand-complement-1: #3AECB1;
+// $brand-complement-1: #B71EB9;
 $dark-grey: #778288;
 $light-grey: #DDD;
 
@@ -60,7 +58,6 @@ dt, dd {
   font-family: $header-fonts;
   color: $brand-color;
   text-decoration: none;
-  // font-size: 1.5em;
 }
 
 #header-logo {
@@ -85,7 +82,6 @@ a:hover {
 }
 a {
   text-decoration: none;
-  // color: #DDD;
   color: $brand-color;
 }
 
@@ -118,7 +114,6 @@ h1, h2, h3, h4, h5, h6, {
   background: #cfa76e;
   background-image: image-url("ZenBG.png");
   padding: 40px;
-  // color: $light-grey;
 }
 
 img {
@@ -126,15 +121,6 @@ img {
   background: $dark-grey;
   border-radius: 3px;
   cursor: pointer;
-}
-
-#quicksearch {
-  // background: hsla(0, 0%, 31%, 0.8);
-  // border-radius: 3px;
-  // color: #F5F5F5;
-  // padding: 5px 5px 5px 15px;
-  // margin: 5px;
-  // border: 1px solid #F5F5F5;
 }
 
 ul {
@@ -166,17 +152,28 @@ div label {
   -o-transform: rotate(180deg); /* Opera */
 }
 
-.brand-color {
-  color: $brand-color;
-}
-
 .inline-block {
   display: inline-block;
 }
 
-.light-grey {
+#primary-content p,
+#primary-content span, {
   color: $light-grey;
 }
+
+#primary-content a {
+  color: $light-grey;
+  text-decoration: underline;
+}
+
+#primary-content a:hover {
+  color: $brand-color;
+  text-decoration: none;
+}
+
+
+
+
 
 
 // BOOTSTRAP OVERRIDES
@@ -221,51 +218,34 @@ li .has-unread {
 
 // BUTTONS
 
+#primary-content a.btn {
+  text-decoration: none;
+}
+
 .btn.outline {
     background: none;
-    padding: 8px 17px;
-    margin: 10px 3px;
-    text-transform: bold;
+    padding: 8px 15px;
 }
-
-.btn-success.outline {
-    border: 2px solid $light-grey;
-    color: $light-grey;
-}
-
-.btn-success.outline:hover,
-.btn-success.outline:focus,
-.btn-success.outline:active,
-.btn-success.outline.active,
-.open > .dropdown-toggle.btn-success {
-    color: $brand-complement-1;
-    border-color: $brand-complement-1;
-}
-
-
 
 .btn-primary.outline {
     border: 2px solid $light-grey;
     color: $light-grey;
 }
+
 .btn-primary.outline:hover,
 .btn-primary.outline:focus,
 .btn-primary.outline:active,
 .btn-primary.outline.active,
 .open > .dropdown-toggle.btn-primary {
-    color: $brand-complement-2;
-    border-color: $brand-complement-2;
+    color: $brand-color;
+    border-color: $brand-color;
 }
 
-.btn-danger.outline {
-    border: 2px solid $light-grey;
-    color: $light-grey;
+.btn-primary.outline:active, .btn-primary.outline.active {
+    border-color: $brand-color;
+    box-shadow: none;
 }
-.btn-danger.outline:hover,
-.btn-danger.outline:focus,
-.btn-danger.outline:active,
-.btn-danger.outline.active,
-.open > .dropdown-toggle.btn-danger {
-  color: $brand-complement-3;
-  border-color: $brand-complement-3;
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
 }

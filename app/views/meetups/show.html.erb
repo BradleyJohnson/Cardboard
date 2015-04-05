@@ -2,19 +2,19 @@
   <%= form_tag rsvps_path, class: "btn", method: :post do %>
     <%= hidden_field_tag "rsvp[user_id]", current_user.id %>
     <%= hidden_field_tag "rsvp[meetup_id]", @meetup.id %>
-    <%= submit_tag 'RSVP to this meetup', class: "btn outline btn-success" %>
+    <%= submit_tag 'RSVP to this meetup', class: "btn outline btn-primary" %>
   <% end %>
 <% end %>
 <button type="button" name="button" class="btn btn-primary outline">Log a Result</button>
-<button type="button" name="button" class="btn btn-danger outline">Post a Comment</button>
+<button type="button" name="button" class="btn btn-primary outline">Post a Comment</button>
 
 <hr>
 
 <div id="meetup-info">
   <h3><%= @meetup.location_string %></h3>
-  <p class="light-grey"><%= @meetup.location_address %></p>
+  <p ><%= @meetup.location_address %></p>
   <h3>Notes</h3>
-  <p class="light-grey"><%= @meetup.meetup_notes %></p>
+  <p ><%= @meetup.meetup_notes %></p>
 </div>
 
 <div id="meetup-comments">
@@ -36,7 +36,7 @@
       </div>
 
       <div class="form-group">
-        <%= f.submit class: "btn btn-success outline", id: "add-comment" %>
+        <%= f.submit class: "btn btn-primary outline", id: "add-comment" %>
         <%= link_to "Cancel", meetup_path(@meetup), class: "btn btn-danger outline" %>
       </div>
 
@@ -48,10 +48,10 @@
       <div class="well">
         <h4><%= comment.user.username  %></h4>
         <hr>
-        <p class="light-grey">
+        <p >
           <strong><%= comment.title %></strong>
         </p>
-        <p class="light-grey">
+        <p >
           <%= comment.body %>
         </p>
       </div>

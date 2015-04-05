@@ -1,14 +1,15 @@
-<a href="#directMessageModal" role=button class="btn btn-success outline" data-toggle="modal">Compose Message</a>
+<a href="#directMessageModal" role=button class="btn btn-primary outline" data-toggle="modal">Compose Message</a>
 
+<hr>
 <%= render partial: "modals/direct_message_modal" %>
 
 <% if @messages %>
   <% @messages.each do |msg| %>
     <div class="well">
       <h3><%= msg.sender_username %></h3>
-      <p class="light-grey"><%= msg.title %></p>
+      <p ><%= msg.title %></p>
       <hr>
-      <p class="light-grey"><%= msg.body %></p>
+      <p ><%= msg.body %></p>
     </div>
   <% end %>
 <% end %>
