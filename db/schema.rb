@@ -57,13 +57,6 @@ ActiveRecord::Schema.define(version: 20150402024800) do
     t.string   "location"
   end
 
-  create_table "matches", force: true do |t|
-    t.integer  "game_id"
-    t.integer  "meetup_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "mechanics", force: true do |t|
     t.string   "mechanic_type"
     t.datetime "created_at"
@@ -104,14 +97,6 @@ ActiveRecord::Schema.define(version: 20150402024800) do
     t.datetime "updated_at"
     t.string   "sender_username"
     t.string   "recipient_username"
-  end
-
-  create_table "results", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "match_id"
-    t.boolean  "result"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "rsvps", force: true do |t|
