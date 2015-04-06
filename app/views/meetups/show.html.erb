@@ -6,7 +6,6 @@
   <% end %>
 <% end %>
 <button type="button" name="button" class="btn btn-primary outline">Log a Result</button>
-<button type="button" name="button" class="btn btn-primary outline">Post a Comment</button>
 
 <hr>
 
@@ -37,7 +36,7 @@
 
       <div class="form-group">
         <%= f.submit class: "btn btn-primary outline", id: "add-comment" %>
-        <%= link_to "Cancel", meetup_path(@meetup), class: "btn btn-danger outline" %>
+        <%= link_to "Cancel", meetup_path(@meetup), class: "btn btn-primary outline" %>
       </div>
 
     <% end %>
