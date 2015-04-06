@@ -14,6 +14,7 @@ class MeetupsController < ApplicationController
     @attendees = User.joins(:rsvps).where(rsvps: { meetup_id: @meetup.id})
     @collections = @meetup.aggregate_collections(@attendees)
     @comment = Comment.new
+    @result = Result.new
   end
 
   private

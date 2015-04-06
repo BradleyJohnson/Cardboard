@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :groups
   resources :comments
   resources :users
-
+  resources :results
   post 'rsvps' => 'rsvps#create'
 
   get 'find-groups' => 'groups#all'

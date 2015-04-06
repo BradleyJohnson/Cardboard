@@ -5,7 +5,7 @@
     <%= submit_tag 'RSVP to this meetup', class: "btn outline btn-primary" %>
   <% end %>
 <% end %>
-<button type="button" name="button" class="btn btn-primary outline">Log a Result</button>
+<a href="#logResultModal" role=button class="btn btn-primary outline" data-toggle="modal">Log a Result</a>
 
 <hr>
 
@@ -80,3 +80,4 @@
   </div>
 </div>
 <%= render partial: "modals/game_info_modal" %>
+<%= render partial: "modals/log_result_modal" %>

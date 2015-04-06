@@ -173,9 +173,6 @@ div label {
 
 
 
-
-
-
 // BOOTSTRAP OVERRIDES
 
 // NESTED WELLS
@@ -184,6 +181,13 @@ div label {
   background: hsla(0, 0%, 31%, 0.8);
   font-size: .75em;
   // background: hsla(0, 0%, 0%, .4);
+}
+
+
+// MODAL
+
+.modal-content {
+  background: hsla(0, 0%, 31%, 0.95);
 }
 
 
