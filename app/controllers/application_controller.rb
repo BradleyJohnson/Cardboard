@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :get_inbox_count, :authenticate_user!
 
+  def after_sign_in_path_for(current_user)
+    user_path(current_user)
+  end
+
   def get_inbox_count
     if current_user
       @message_count = Message.where(recipient_username: current_user.username, unread: true ).count
