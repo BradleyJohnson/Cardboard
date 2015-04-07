@@ -1,12 +1,10 @@
-<h3>Dashboard</h3>
+<h3 class="inline-block">Dashboard</h3><span class="glyphicon glyphicon-menu-up light-grey" aria-hidden="true" id="results-toggle"></span>
 
-<div class="hidden">
+<div class="hidden" >
   <%= @results.to_json %>
 </div>
 
 <canvas id="myChart"></canvas>
-
-
 
 <div id="user-comments">
   <h3 class="inline-block">Comments</h3><span class="glyphicon glyphicon-menu-up light-grey" aria-hidden="true" id="comments-toggle"></span><span class="glyphicon glyphicon-comment light-grey" aria-hidden="true" id="comment-form-toggle"></span>
@@ -100,6 +98,12 @@
       scaleFontSize: 12,
       scaleShowVerticalLines: false,
       scaleGridLineColor : "#ddd",
+    });
+
+
+    $("#results-toggle").on("click", function() {
+      $("#results-toggle").toggleClass("rotated");
+      $("#myChart").slideToggle();
     });
 
 

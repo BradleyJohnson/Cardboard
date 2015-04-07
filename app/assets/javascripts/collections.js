@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   $("#masonry-div").on("click", "img", function() {
-    var modalTitle = $(".modal-header h4");
+    var modalTitle = $(".modal-header h3");
     var modalBody = $(".modal-body")
 
     var gameName = $(this).parent().attr("data-game-name");
@@ -16,15 +16,15 @@ $(document).ready(function() {
     $(modalBody).html("");
 
     html = "\
-      <dl>\
-        <dt>Game Designer</dt> - <dd>" + gameDesigner + "</dd>\
-        <dt>Year Published</dt> - <dd>" + gamePublished + "</dd>\
-        <dt>Min Players</dt> - <dd>" + gameMinPlayers + "</dd>\
-        <dt>Max Players</dt> - <dd>" + gameMaxPlayers + "</dd>\
-        <dt>BGG ID</dt> - <dd>" + gameBggId + "</dd>\
-      </dl>\
+      <ul>\
+        <li>Game Designer - " + gameDesigner + "</li>\
+        <li>Year Published - " + gamePublished + "</li>\
+        <li>Min Players - " + gameMinPlayers + "</li>\
+        <li>Max Players - " + gameMaxPlayers + "</li>\
+        <li>BGG ID - " + gameBggId + "</li>\
+      </ul>\
     "
-    modalTitle.append("<h4> " + gameName + "</h4>");
+    modalTitle.append(gameName);
     modalBody.append("<p>" + html + "</p>");
     modalBody.append("<p>" + gameDescription + "</p>");
 

@@ -3,7 +3,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button class="close" data-dismiss="modal">&times;</button>
-        <h4></h4>
+        <h4>User Search</h4>
       </div>
       <div class="modal-body">
 
@@ -11,7 +11,7 @@
           <%= form_tag("/user-search", method: "get", id: "search-form") do %>
             <%= hidden_field_tag(:group_id, @group.id) %>
             <%= text_field_tag(:admin_user_search) %>
-            <%= submit_tag "Search", id: "admin-search-submit" %>
+            <%= submit_tag "Search", class: "btn btn-primary outline", id: "admin-search-submit" %>
           <% end %>
         </div>
 
