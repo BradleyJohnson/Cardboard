@@ -44,7 +44,7 @@ module ApplicationHelper
   end
 
   def profile_active
-    if controller_name == 'profiles' && action_name == 'index'
+    if controller_name == 'users' && action_name == 'show'
       "active"
     else
       nil

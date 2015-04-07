@@ -42,6 +42,8 @@ $(document).ready(function() {
         <p class='light-grey'>" + data.comment.body + "</p>\
       </div>"
       $("#comments-list").append(html);
+      $("#comment-title").val("");
+      $("#comment-body").val("");
     }).error(function(error) {
       alert(error);
     });
