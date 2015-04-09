@@ -9,9 +9,13 @@ Cardboard is an application that helps stave off the the madness and wasted time
 
 ## Vitals
 Ruby: 2.1.3p242,
+
 Rails: 4.1.8,
-ChartJS, 1.0.2
-jQuery 2.1.3,
+
+ChartJS: 1.0.2,
+
+jQuery: 2.1.3,
+
 Bootstrap 3.3.4,
 
 ##Setup
