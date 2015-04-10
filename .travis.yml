@@ -7,6 +7,3 @@ before_script:
   - bundle exec rake db:migrate
 script:
   - bundle exec rake spec
-addons:
-  code_climate:
-    repo_token: 7b7ba00264b2deb8397f6532447007b91a6bbafe72a71b81d9e11d474338a37a
