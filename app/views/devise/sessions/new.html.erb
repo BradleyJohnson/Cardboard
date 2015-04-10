@@ -3,12 +3,12 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-horizontal"}) do |f| %>
   <div class="form-group">
     <h4 class="col-md-2">Email</h4>
-    <%= f.email_field :email, class: "col-md-6 styled-input", autofocus: true %>
+    <%= f.email_field :email, class: "col-md-6 styled-input", id: "email-input", autofocus: true %>
   </div>
 
   <div class="form-group">
     <h4 class="col-md-2">Password</h4>
-    <%= f.password_field :password, class: "col-md-6 styled-input", autocomplete: "off" %>
+    <%= f.password_field :password, class: "col-md-6 styled-input", id: "password-input", autocomplete: "off" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>

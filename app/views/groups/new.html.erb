@@ -1,17 +1,17 @@
 <%= form_for @group, html: {class: "form-horizontal"} do |f| %>
   <div class="form-group">
     <h3 class="col-md-3">Group Name</h3>
-    <%= f.text_field :name, class: "col-md-5 styled-input" %>
+    <%= f.text_field :name, class: "col-md-5 styled-input", id: "name-input" %>
   </div>
 
   <div class="form-group">
     <h3 class="col-md-3">Group Location</h3>
-    <%= f.text_field :location, class: "col-md-5 styled-input" %>
+    <%= f.text_field :location, class: "col-md-5 styled-input", id: "location-input" %>
   </div>
 
   <div class="form-group">
     <h3 class="col-md-3">Description</h3>
-    <%= f.text_area :description, class: "col-md-8 styled-input" %>
+    <%= f.text_area :description, class: "col-md-8 styled-input", id: "description-input" %>
   </div>
 
   <div class="form-group">

@@ -37,7 +37,7 @@ RSpec.describe Membership, :type => :model do
 
   it "Membership query renders appropriate group and user associations" do
     new_user = User.create!(username: "brad", email: "blob@blobby.com", password: "12345678")
-    new_group = Group.create!(name: "The Geeks From BEYOND!")
+    new_group = Group.create!(name: "The Geeks From BEYOND!", location: "Somewhere", description: "Something")
     membership = Membership.create!(user: new_user, group: new_group)
 
 

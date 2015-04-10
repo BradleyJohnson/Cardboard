@@ -2,56 +2,55 @@ require 'rails_helper'
 
 feature RegistrationsController do
 
-  before :each do
+  scenario "Redirects to Profile after successful registration" do
     visit root_path
+    click_on "Or, Sign up"
+
+    fill_in "username-input", with: "Falcon9"
+    fill_in "email-input", with: "falcon@spacex.com"
+    fill_in "password-input", with: "12345678"
+    fill_in "password-confirmation-input", with: "12345678"
     click_on "Sign up"
-    fill_in "Username", with: "TreeFiddy"
-    fill_in "Email", with: "you@got.com"
-    fill_in "Password", with: "12345678"
-    fill_in "Password confirmation", with: "12345678"
-    click_on "Sign up"
-    click_on "Log Out"
-    click_on "Sign up"
+
+    expect(page).to have_content("Dashboard")
   end
 
-  scenario "Redirects to root after successful registration" do
-    fill_in "Username", with: "Falcon9"
-    fill_in "Email", with: "falcon@spacex.com"
-    fill_in "Password", with: "12345678"
-    fill_in "Password confirmation", with: "12345678"
-    click_on "Sign up"
+  scenario "Registration error is displayed with bad credentials" do
+    visit root_path
 
-    expect(page).to have_content("Falcon9")
-  end
+    fill_in "email-input", with: "falcon@spacex.com"
+    fill_in "password-input", with: "87654321"
+    click_on "Log in"
 
-  scenario "Registration error is displayed with bad parameters" do
-    fill_in "Username", with: "Falcon9"
-    fill_in "Email", with: "falcon@spacex.com"
-    fill_in "Password", with: "87654321"
-    fill_in "Password confirmation", with: "12345678"
-    click_on "Sign up"
-
-    expect(page).to have_content("Password confirmation doesn't match Password")
+    expect(page).to have_content("Invalid email or password.")
   end
 
   scenario "User cannot register with an existing email" do
-    fill_in "Username", with: "TreeFiddy"
-    fill_in "Email", with: "someotheremail@got.com"
-    fill_in "Password", with: "12345678"
-    fill_in "Password confirmation", with: "12345678"
-    click_on "Sign up"
+    User.create!(username: "TheDude", email: "you@got.com", password: "12345678")
+    visit root_path
+    click_on "Or, Sign up"
 
-    expect(page).to have_content("Username has already been taken")
-  end
-
-  scenario "User cannot register with an existing username" do
-    fill_in "Username", with: "SomeOtherUserName"
-    fill_in "Email", with: "you@got.com"
-    fill_in "Password", with: "12345678"
-    fill_in "Password confirmation", with: "12345678"
+    fill_in "username-input", with: "Falcon9"
+    fill_in "email-input", with: "you@got.com"
+    fill_in "password-input", with: "12345678"
+    fill_in "password-confirmation-input", with: "12345678"
     click_on "Sign up"
 
     expect(page).to have_content("Email has already been taken")
+  end
+
+  scenario "User cannot register with an existing username" do
+    User.create!(username: "TreeFiddy", email: "you@got.com", password: "12345678")
+    visit root_path
+    click_on "Or, Sign up"
+    
+    fill_in "username-input", with: "TreeFiddy"
+    fill_in "email-input", with: "you@got.com"
+    fill_in "password-input", with: "12345678"
+    fill_in "password-confirmation-input", with: "12345678"
+    click_on "Sign up"
+
+    expect(page).to have_content("Username has already been taken")
   end
 
 end

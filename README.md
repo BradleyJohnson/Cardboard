@@ -1,8 +1,6 @@
 #Cardboard README
 
-[![Code Climate](https://codeclimate.com/github/BradleyJohnson/Cardboard/badges/gpa.svg)](https://codeclimate.com/github/BradleyJohnson/Cardboard)
-
-[![Build Status](https://travis-ci.org/BradleyJohnson/Cardboard.svg)](https://travis-ci.org/BradleyJohnson/Cardboard)
+[![Code Climate](https://codeclimate.com/github/BradleyJohnson/Cardboard/badges/gpa.svg)](https://codeclimate.com/github/BradleyJohnson/Cardboard) [![Build Status](https://travis-ci.org/BradleyJohnson/Cardboard.svg)](https://travis-ci.org/BradleyJohnson/Cardboard)
 
 
 ## What is Cardboard?

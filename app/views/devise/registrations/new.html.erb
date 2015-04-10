@@ -5,22 +5,22 @@
 
   <div class="form-group">
     <h4 class="col-md-2">Username</h4>
-    <%= f.text_field :username, class: "col-md-6 styled-input", autofocus: true %>
+    <%= f.text_field :username, class: "col-md-6 styled-input", id: "username-input", autofocus: true %>
   </div>
 
   <div class="form-group">
     <h4 class="col-md-2">Email</h4>
-    <%= f.email_field :email, class: "col-md-6 styled-input" %>
+    <%= f.email_field :email, class: "col-md-6 styled-input", id: "email-input" %>
   </div>
 
   <div class="form-group">
     <h4 class="col-md-2">Password</h4>
-    <%= f.password_field :password, autocomplete: "off", placeholder: "#{@minimum_password_length} characters minimum", class: "col-md-6 styled-input" %>
+    <%= f.password_field :password, autocomplete: "off", placeholder: "#{@minimum_password_length} characters minimum", class: "col-md-6 styled-input", id: "password-input" %>
   </div>
 
   <div class="form-group">
     <h4 class="col-md-2">Pass. Confirmation</h4>
-    <%= f.password_field :password_confirmation, autocomplete: "off",  placeholder: "#{@minimum_password_length} characters minimum", class: "col-md-6 styled-input" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off",  placeholder: "#{@minimum_password_length} characters minimum", class: "col-md-6 styled-input", id: "password-confirmation-input" %>
   </div>
 
   <div class="form-group">
