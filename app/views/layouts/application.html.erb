@@ -7,7 +7,7 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body data-cntl="<%= controller.controller_path %>" data-act="<%= controller.action_name %>">
   <div class="container">
 
     <div class="row">
