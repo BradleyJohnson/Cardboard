@@ -8,14 +8,12 @@
       <div class="modal-body">
         <%= form_for @result, html: {class: "form-horizontal"} do |f| %>
           <h5>Which game?</h5>
-
           <%= f.hidden_field :user_id, :value => current_user.id %>
           <%= f.hidden_field :meetup_id, :value => @meetup.id %>
-
-          <%= f.collection_select(:game_id, @collections, :id, :name) %>
-
-          <%= f.label "Check the box if you won" %>
-          <%= f.check_box(:result) %>
+          <%= f.collection_select(:game_id, @collections, :id, :name, {prompt: "Select a Game"}, {class: "col-sm-9"}) %>
+          <br>
+          <h5>Check the box if you won.</h5>
+          <%= f.check_box(:result, {class: "col-sm-offset-1"}) %>
           <hr>
           <%= f.submit "Log Result", class: "btn btn-primary outline" %>
           <%= link_to "Cancel", meetup_path(@meetup), class: "btn btn-primary outline" %>

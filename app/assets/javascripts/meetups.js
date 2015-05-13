@@ -1,15 +1,21 @@
 $(document).ready(function() {
   $("#comment-form").hide();
 
-  // Slide handler for comments
+// Slide handler for comments
   $("#comments-toggle").on("click", function() {
     $("#comments-toggle").toggleClass("rotated");
     $("#comments-list").slideToggle();
   });
 
-  // Slide handler for comment form
+// Slide handler for comment form
   $("#comment-form-toggle").on("click", function() {
     $("#comment-form").slideToggle();
+  });
+
+  // Slide handler for comment form
+  $("#result-form-toggle").on("click", function() {
+    $("#result-form-toggle").toggleClass("rotated");
+    $("#result-form").slideToggle();
   });
 
 
